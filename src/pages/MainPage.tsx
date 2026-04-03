@@ -3,6 +3,7 @@ import { ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../Components/Header/Header';
 import Summary from '../Components/Summary/Summary';
+import Skills from '../Components/Skills/Skills';
 
 function MainPage() {
   return (
@@ -10,6 +11,7 @@ function MainPage() {
       <ScrollView>
         <Header />
         <Summary />
+        <Skills />
       </ScrollView>
     </SafeAreaView>
   );
