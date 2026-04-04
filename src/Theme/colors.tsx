@@ -4,5 +4,6 @@ export const AppColors = {
     headingColor: '#a2076c',
     descriptionColor: '#e8099a',
     skillsColor: '#f6326d',
+    workExperienceColor: '#f96591',
     white: '#FFFFFF',
 }

@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../Components/Header/Header';
 import Summary from '../Components/Summary/Summary';
 import Skills from '../Components/Skills/Skills';
+import WorkExperience from '../Components/WorkExperience/WorkExperience';
 
 function MainPage() {
   return (
@@ -12,6 +13,7 @@ function MainPage() {
         <Header />
         <Summary />
         <Skills />
+        <WorkExperience />
       </ScrollView>
     </SafeAreaView>
   );
