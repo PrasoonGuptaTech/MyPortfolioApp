@@ -9,6 +9,7 @@ export const WorkExperienceConst = [
     companyDurationEnd: '',
     companyDescription: 'Car Scanning and Insurance Based Company',
     isAppLink: true,
+    appName: 'ScansAI',
     appLink: '',
     techSkills: [
       'React Native',
@@ -22,6 +23,7 @@ export const WorkExperienceConst = [
     isAgile: true,
     isCICD: true,
     isExperienceLetter: false,
+    experienceLetterName: '',
     isProjects: true,
     projectName: 'Ride E-Hailing',
     projectDescription:
