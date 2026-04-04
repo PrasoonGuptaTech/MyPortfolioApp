@@ -7,6 +7,7 @@ import Skills from '../Components/Skills/Skills';
 import WorkExperience from '../Components/WorkExperience/WorkExperience';
 import Projects from '../Components/Projects/Projects';
 import Education from '../Components/Education/Education';
+import Awards from '../Components/Awards/Awards';
 
 function MainPage() {
   return (
@@ -18,6 +19,7 @@ function MainPage() {
         <WorkExperience />
         <Projects />
         <Education />
+        <Awards />
       </ScrollView>
     </SafeAreaView>
   );
