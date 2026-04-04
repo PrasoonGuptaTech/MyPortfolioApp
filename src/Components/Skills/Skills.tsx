@@ -2,14 +2,14 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { AppFontsSize } from '../../Theme/fontSize';
 import { AppColors } from '../../Theme/colors';
-import ProgrammingLangSkills from '../../SubComponents/ProgrammingSkills/ProgrammingLangSkills';
-import WebsiteDevelopmentSkills from '../../SubComponents/WebsiteSkills/WebsiteDevelopmentSkills';
-import MobileDevelopmentSkills from '../../SubComponents/MobileSkills/MobileDevelopmentSkills';
-import ThirdPartyLibrariesSkills from '../../SubComponents/ThirdPartyLibrariesSkills/ThirdPartyLibrariesSkills';
-import MonitoringTools from '../../SubComponents/MonitoringTools/MonitoringTools';
-import TestingTools from '../../SubComponents/TestingTools/TestingTools';
-import VersionControl from '../../SubComponents/VersionControl/VersionControl';
-import PipelineSkills from '../../SubComponents/Pipeline/PipelineSkills';
+import ProgrammingLangSkills from '../../SkillsComponents/ProgrammingSkills/ProgrammingLangSkills';
+import WebsiteDevelopmentSkills from '../../SkillsComponents/WebsiteSkills/WebsiteDevelopmentSkills';
+import MobileDevelopmentSkills from '../../SkillsComponents/MobileSkills/MobileDevelopmentSkills';
+import ThirdPartyLibrariesSkills from '../../SkillsComponents/ThirdPartyLibrariesSkills/ThirdPartyLibrariesSkills';
+import MonitoringTools from '../../SkillsComponents/MonitoringTools/MonitoringTools';
+import TestingTools from '../../SkillsComponents/TestingTools/TestingTools';
+import VersionControl from '../../SkillsComponents/VersionControl/VersionControl';
+import PipelineSkills from '../../SkillsComponents/Pipeline/PipelineSkills';
 
 function Skills() {
   return (
