@@ -6,6 +6,7 @@ import Summary from '../Components/Summary/Summary';
 import Skills from '../Components/Skills/Skills';
 import WorkExperience from '../Components/WorkExperience/WorkExperience';
 import Projects from '../Components/Projects/Projects';
+import Education from '../Components/Education/Education';
 
 function MainPage() {
   return (
@@ -16,6 +17,7 @@ function MainPage() {
         <Skills />
         <WorkExperience />
         <Projects />
+        <Education />
       </ScrollView>
     </SafeAreaView>
   );
