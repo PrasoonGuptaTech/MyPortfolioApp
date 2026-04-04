@@ -1,7 +1,15 @@
 import React from 'react';
-import { Dimensions, ScrollView, StyleSheet, Text, View } from 'react-native';
+import {
+  Dimensions,
+  FlatList,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import { AppFontsSize } from '../../Theme/fontSize';
 import { AppColors } from '../../Theme/colors';
+import { WorkExperienceConst } from '../../Constants/WorkExperienceConstant';
+import WorkExperienceCarousel from '../../ReusableComponents/WorkExperienceCarousel/WorkExperienceCarousel';
 
 const { width, height } = Dimensions.get('window');
 
@@ -9,63 +17,13 @@ function WorkExperience() {
   return (
     <View style={styles.layout}>
       <Text style={styles.headingTitle}>Work Experience</Text>
-      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-        <View style={styles.cardView}>
-          <Text style={styles.profileTitle} numberOfLines={1}>
-            React Native Developer
-          </Text>
-          <Text style={styles.companyTitle} numberOfLines={1}>
-            Scans.AI
-          </Text>
-          <Text style={styles.durationTitle} numberOfLines={1}>
-            April 2026 - Present
-          </Text>
-        </View>
-        <View style={styles.cardView}>
-          <Text style={styles.profileTitle} numberOfLines={1}>
-            Technology Lead
-          </Text>
-          <Text style={styles.companyTitle} numberOfLines={1}>
-            Infosys Ltd.
-          </Text>
-          <Text style={styles.durationTitle} numberOfLines={1}>
-            July 2021 - March 2026
-          </Text>
-        </View>
-        <View style={styles.cardView}>
-          <Text style={styles.profileTitle} numberOfLines={1}>
-            React Native Developer
-          </Text>
-          <Text style={styles.companyTitle} numberOfLines={1}>
-            Wizlite Innovation Center
-          </Text>
-          <Text style={styles.durationTitle} numberOfLines={1}>
-            Jan 2021 - Mar 2021
-          </Text>
-        </View>
-        <View style={styles.cardView}>
-          <Text style={styles.profileTitle} numberOfLines={1}>
-            Field Application Engineer
-          </Text>
-          <Text style={styles.companyTitle} numberOfLines={1}>
-            RamaKrishna Electro Components Pvt. Ltd.
-          </Text>
-          <Text style={styles.durationTitle} numberOfLines={1}>
-            Nov 2019 - Nov 2020
-          </Text>
-        </View>
-        <View style={styles.cardView}>
-          <Text style={styles.profileTitle} numberOfLines={1}>
-            R & D Engineer
-          </Text>
-          <Text style={styles.companyTitle} numberOfLines={1}>
-            Tiyatech Solutions Pvt. Ltd.
-          </Text>
-          <Text style={styles.durationTitle} numberOfLines={1}>
-            Sept 2017 - Oct 2019
-          </Text>
-        </View>
-      </ScrollView>
+      <FlatList
+        data={WorkExperienceConst}
+        renderItem={({item}) => {
+          return <WorkExperienceCarousel workExperienceItem={item} />;
+        }}
+        keyExtractor={(item) => item?.id?.toString()}
+      />
     </View>
   );
 }
