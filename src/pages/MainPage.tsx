@@ -5,6 +5,7 @@ import Header from '../Components/Header/Header';
 import Summary from '../Components/Summary/Summary';
 import Skills from '../Components/Skills/Skills';
 import WorkExperience from '../Components/WorkExperience/WorkExperience';
+import Projects from '../Components/Projects/Projects';
 
 function MainPage() {
   return (
@@ -14,6 +15,7 @@ function MainPage() {
         <Summary />
         <Skills />
         <WorkExperience />
+        <Projects />
       </ScrollView>
     </SafeAreaView>
   );
