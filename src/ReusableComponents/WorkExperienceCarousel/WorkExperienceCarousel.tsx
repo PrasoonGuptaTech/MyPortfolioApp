@@ -2,6 +2,9 @@ import React from 'react';
 import { Dimensions, Pressable, StyleSheet, Text } from 'react-native';
 import { AppColors } from '../../Theme/colors';
 import { AppFontsSize } from '../../Theme/fontSize';
+import { useNavigation } from '@react-navigation/native';
+import type { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../Navigation/PagesNavigation';
 
 const { width, height } = Dimensions.get('window');
 
@@ -15,13 +18,22 @@ type WorkExperiencePropsType = {
   };
 };
 
+type WorkExperienceNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  'WorkExperience'
+>;
+
 function WorkExperienceCarousel(props: Readonly<WorkExperiencePropsType>) {
   const { workExperienceItem } = props;
+  const navigation = useNavigation<WorkExperienceNavigationProp>();
   let companyPresentEmployee = workExperienceItem?.isCompanyPresentEmployee
     ? ' - Present'
     : workExperienceItem?.companyDurationEnd;
+  const onWorkexperiencePressHandler = () => {
+    navigation?.navigate('WorkExperience');
+  };
   return workExperienceItem ? (
-    <Pressable style={styles.cardView}>
+    <Pressable style={styles.cardView} onPress={onWorkexperiencePressHandler}>
       {!!workExperienceItem?.profileName && (
         <Text style={styles.profileTitle} numberOfLines={1}>
           {workExperienceItem?.profileName}
