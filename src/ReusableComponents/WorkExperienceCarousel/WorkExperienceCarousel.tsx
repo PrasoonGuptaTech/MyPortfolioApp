@@ -10,6 +10,7 @@ const { width, height } = Dimensions.get('window');
 
 type WorkExperiencePropsType = {
   workExperienceItem: {
+    id?: number;
     profileName?: string;
     companyName?: string;
     companyDurationStart?: string;
@@ -30,7 +31,13 @@ function WorkExperienceCarousel(props: Readonly<WorkExperiencePropsType>) {
     ? ' - Present'
     : workExperienceItem?.companyDurationEnd;
   const onWorkexperiencePressHandler = () => {
-    navigation?.navigate('WorkExperience');
+    if (workExperienceItem?.id === undefined) {
+      return null;
+    } else {
+      navigation?.navigate('WorkExperience', {
+        id: Number(workExperienceItem?.id),
+      });
+    }
   };
   return workExperienceItem ? (
     <Pressable style={styles.cardView} onPress={onWorkexperiencePressHandler}>
