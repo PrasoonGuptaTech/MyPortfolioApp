@@ -34,18 +34,15 @@ function WorkExperienceDetailPage(
   const { params } = route;
   const { id } = params;
   const navigation = useNavigation();
-  const filteredWorkExperience = WorkExperienceConst.filter(
+  const filteredWorkExperience = WorkExperienceConst.find(
     item => item?.id === id,
   );
-  const filteredWorkExperienceIndex = WorkExperienceConst.findIndex(
-    item => item?.id === id,
-  );
-  const workExperience = filteredWorkExperience[filteredWorkExperienceIndex];
+  const workExperience = filteredWorkExperience;
   const companyPresentEmployee = workExperience?.isCompanyPresentEmployee
     ? ' - Present'
-    : workExperience?.companyDurationEnd;
+    : ` - ${workExperience?.companyDurationEnd}`;
   const projectDuration = workExperience?.isProjectDurationEnd
-    ? workExperience?.projectDurationEnd
+    ? ` - ${workExperience?.projectDurationEnd}`
     : ' - Present';
   const onBackNavigationHandler = () => navigation?.goBack();
   const onCompanyLinkPressHandler = () =>
@@ -75,7 +72,7 @@ function WorkExperienceDetailPage(
           {workExperience?.companyDurationStart}
           {companyPresentEmployee}
         </Text>
-        <Text numberOfLines={2} style={styles.companyDesc}>
+        <Text numberOfLines={3} style={styles.companyDesc}>
           {workExperience?.companyDescription}
         </Text>
         {workExperience?.isAppLink ? (
@@ -244,6 +241,7 @@ const styles = StyleSheet.create({
     color: AppColors.subTitleColor,
     textDecorationLine: 'underline',
     marginHorizontal: 10,
+    marginTop: 5,
   },
   skillsTitle: {
     textAlign: 'left',

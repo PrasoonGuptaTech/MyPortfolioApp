@@ -29,7 +29,7 @@ function WorkExperienceCarousel(props: Readonly<WorkExperiencePropsType>) {
   const navigation = useNavigation<WorkExperienceNavigationProp>();
   let companyPresentEmployee = workExperienceItem?.isCompanyPresentEmployee
     ? ' - Present'
-    : workExperienceItem?.companyDurationEnd;
+    : ` - ${workExperienceItem?.companyDurationEnd}`;
   const onWorkexperiencePressHandler = () => {
     if (workExperienceItem?.id === undefined) {
       return null;

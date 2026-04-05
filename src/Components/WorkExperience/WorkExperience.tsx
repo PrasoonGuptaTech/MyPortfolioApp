@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Dimensions,
-  FlatList,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { Dimensions, FlatList, StyleSheet, Text, View } from 'react-native';
 import { AppFontsSize } from '../../Theme/fontSize';
 import { AppColors } from '../../Theme/colors';
 import { WorkExperienceConst } from '../../Constants/WorkExperienceConstant';
@@ -19,10 +13,12 @@ function WorkExperience() {
       <Text style={styles.headingTitle}>Work Experience</Text>
       <FlatList
         data={WorkExperienceConst}
-        renderItem={({item}) => {
+        renderItem={({ item }) => {
           return <WorkExperienceCarousel workExperienceItem={item} />;
         }}
-        keyExtractor={(item) => item?.id?.toString()}
+        keyExtractor={item => item?.id?.toString()}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
       />
     </View>
   );
