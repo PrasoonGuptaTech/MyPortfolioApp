@@ -33,7 +33,7 @@ export const WorkExperienceConst = [
     projectDurationEnd: '',
     iTSectorBased: 'Product',
     isContractor: false,
-    contactorCompany: '',
+    contactorCompanyName: '',
     contactorCompanyUrl: '',
     isProductionSupport: true,
     prodSupportTools: ['Firebase Crashlytics', 'Sentry'],

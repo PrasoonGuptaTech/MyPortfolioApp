@@ -3,6 +3,7 @@ import {
   Dimensions,
   Image,
   Linking,
+  Platform,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -16,6 +17,7 @@ import { AppColors } from '../Theme/colors';
 import { useNavigation } from '@react-navigation/native';
 
 const { width, height } = Dimensions.get('window');
+const isIOS = Platform.OS === 'ios';
 
 type WorkExperienceDetailPageProps = {
   route: {
@@ -42,14 +44,19 @@ function WorkExperienceDetailPage(
   const companyPresentEmployee = workExperience?.isCompanyPresentEmployee
     ? ' - Present'
     : workExperience?.companyDurationEnd;
+  const projectDuration = workExperience?.isProjectDurationEnd
+    ? workExperience?.projectDurationEnd
+    : ' - Present';
   const onBackNavigationHandler = () => navigation?.goBack();
   const onCompanyLinkPressHandler = () =>
     Linking.openURL(`${workExperience?.companyUrl}`);
   const appLinkPressHandler = () =>
     Linking.openURL(`${workExperience?.appLink}`);
+  const onContractorCompanyUrlPressHandler = () =>
+    Linking.openURL(`${workExperience?.contactorCompanyUrl}`);
   return (
     <SafeAreaView>
-      <ScrollView>
+      <ScrollView style={styles.layout}>
         <Pressable onPress={onBackNavigationHandler}>
           <Image
             source={require('../Assets/Images/BackArrow.png')}
@@ -77,25 +84,124 @@ function WorkExperienceDetailPage(
           </Pressable>
         ) : null}
         <Text style={styles.skillsTitle}>Technical Skills</Text>
-        {workExperience?.techSkills?.map(item => (
+        {workExperience?.techSkills?.map((item: string) => (
           <View style={styles.techSkillsRow} key={item?.toString()}>
             <Text style={styles.techSkillsTitle}>{'\u{25C9}'}</Text>
             <Text style={styles.techSkillsTitle}>{item}</Text>
           </View>
         ))}
         <Text style={styles.skillsTitle}>Other Skills</Text>
-        {workExperience?.otherSkills?.map(item => (
+        {workExperience?.otherSkills?.map((item: string) => (
           <View style={styles.techSkillsRow} key={item?.toString()}>
             <Text style={styles.techSkillsTitle}>{'\u{25C9}'}</Text>
             <Text style={styles.techSkillsTitle}>{item}</Text>
           </View>
         ))}
+        {workExperience?.isAgile ? (
+          <Text style={styles.agileTitle}>
+            Agile Methodologies: <Text style={styles.agileBoolean}>Yes</Text>
+          </Text>
+        ) : (
+          <Text style={styles.agileTitle}>
+            Agile Methodologies: <Text style={styles.agileBoolean}>No</Text>
+          </Text>
+        )}
+        {workExperience?.isCICD ? (
+          <Text style={styles.agileTitle}>
+            CI/CD Pipeline: <Text style={styles.agileBoolean}>Yes</Text>
+          </Text>
+        ) : (
+          <Text style={styles.agileTitle}>
+            CI/CD Pipeline: <Text style={styles.agileBoolean}>No</Text>
+          </Text>
+        )}
+        <View style={styles.experienceLetterRow}>
+          <Text style={styles.experienceLetterTitle}>Experience Letter: </Text>
+          {workExperience?.isExperienceLetter ? (
+            <Text style={styles.workExperienceLetterName}>
+              {workExperience?.experienceLetterName}
+            </Text>
+          ) : (
+            <Text style={styles.workExperienceLetterName}>No</Text>
+          )}
+          {workExperience?.isExperienceLetter ? (
+            <Text style={styles.workExperienceDownloadIcon}>{'\u{2913}'}</Text>
+          ) : null}
+        </View>
+        {workExperience?.isProjects ? (
+          <View style={styles.projectDetailsView}>
+            <Text style={styles.projectsTitle}>Projects</Text>
+            <View style={styles.projectDescriptionRow}>
+              <Text style={styles.projectRadio}>{'\u{25C9}'}</Text>
+              <Text style={styles.projectTitle}>Title:</Text>
+              <Text style={styles.projectTitleValue}>
+                {workExperience?.projectName}
+              </Text>
+            </View>
+            <View style={styles.projectDescriptionRow}>
+              <Text style={styles.projectRadio}>{'\u{25C9}'}</Text>
+              <Text style={styles.projectTitle}>Description:</Text>
+              <Text style={styles.projectTitleValue}>
+                {workExperience?.projectDescription}
+              </Text>
+            </View>
+            <View style={styles.projectDescriptionRow}>
+              <Text style={styles.projectRadio}>{'\u{25C9}'}</Text>
+              <Text style={styles.projectTitle}>Duration:</Text>
+              <Text style={styles.projectTitleValue}>
+                {workExperience?.projectDurationStart}
+                {projectDuration}
+              </Text>
+            </View>
+          </View>
+        ) : null}
+        <View style={styles.experienceLetterRow}>
+          <Text style={styles.experienceLetterTitle}>IT Sector: </Text>
+          <Text style={styles.workExperienceLetterName}>
+            {workExperience?.iTSectorBased}
+          </Text>
+        </View>
+        {workExperience?.isContractor ? (
+          <View style={styles.experienceLetterRow}>
+            <Text style={styles.experienceLetterTitle}>Contactor: </Text>
+            <Pressable onPress={onContractorCompanyUrlPressHandler}>
+              <Text style={styles.workExperienceLetterName}>
+                {workExperience?.contactorCompanyName}
+              </Text>
+            </Pressable>
+          </View>
+        ) : null}
+        {workExperience?.isProductionSupport ? (
+          <>
+            <Text style={styles.skillsTitle}>Production Support Tools</Text>
+            {workExperience?.prodSupportTools?.map((item: string) => (
+              <View style={styles.techSkillsRow} key={item?.toString()}>
+                <Text style={styles.techSkillsTitle}>{'\u{25C9}'}</Text>
+                <Text style={styles.techSkillsTitle}>{item}</Text>
+              </View>
+            ))}
+          </>
+        ) : null}
+        {workExperience?.isAwardsGiven ? (
+          <>
+            <Text style={styles.skillsTitle}>Awards & Achievements</Text>
+            {workExperience?.awards?.map((item: string) => (
+              <View style={styles.techSkillsRow} key={item?.toString()}>
+                <Text style={styles.techSkillsTitle}>{'\u{25C9}'}</Text>
+                <Text style={styles.techSkillsTitle}>{item}</Text>
+              </View>
+            ))}
+          </>
+        ) : null}
       </ScrollView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  layout: {
+    marginVertical: 15,
+  },
   backArrowView: {
     width: width / 8,
     height: height / 34,
@@ -159,6 +265,85 @@ const styles = StyleSheet.create({
     fontSize: AppFontsSize.sm,
     color: AppColors.descriptionColor,
     marginHorizontal: 5,
+  },
+  agileTitle: {
+    textAlign: 'left',
+    fontWeight: '500',
+    fontSize: AppFontsSize.md,
+    color: AppColors.headingColor,
+    marginTop: 15,
+    marginHorizontal: 10,
+  },
+  agileBoolean: {
+    textAlign: 'left',
+    fontWeight: '400',
+    fontSize: AppFontsSize.sm,
+    color: AppColors.descriptionColor,
+    marginHorizontal: 5,
+  },
+  experienceLetterRow: {
+    flexDirection: 'row',
+    marginTop: 15,
+    marginHorizontal: 10,
+  },
+  experienceLetterTitle: {
+    textAlign: 'left',
+    fontWeight: '500',
+    fontSize: AppFontsSize.md,
+    color: AppColors.headingColor,
+  },
+  workExperienceLetterName: {
+    textAlign: 'left',
+    fontWeight: '400',
+    fontSize: AppFontsSize.sm,
+    color: AppColors.descriptionColor,
+    marginHorizontal: 3,
+    marginTop: 2.7,
+  },
+  workExperienceDownloadIcon: {
+    textAlign: 'left',
+    fontWeight: '400',
+    fontSize: AppFontsSize.lg,
+    color: AppColors.descriptionColor,
+    marginHorizontal: 3,
+    marginTop: isIOS ? 2.7 : 0,
+  },
+  projectDetailsView: {
+    marginTop: 15,
+    marginHorizontal: 10,
+  },
+  projectsTitle: {
+    textAlign: 'left',
+    fontWeight: '500',
+    fontSize: AppFontsSize.md,
+    color: AppColors.headingColor,
+  },
+  projectDescriptionRow: {
+    flexDirection: 'row',
+    marginTop: 8,
+  },
+  projectRadio: {
+    textAlign: 'left',
+    fontWeight: '400',
+    fontSize: AppFontsSize.sm,
+    color: AppColors.descriptionColor,
+    marginHorizontal: 5,
+    marginTop: 2.3,
+  },
+  projectTitle: {
+    textAlign: 'left',
+    fontWeight: '400',
+    fontSize: AppFontsSize.md,
+    color: AppColors.headingColor,
+  },
+  projectTitleValue: {
+    textAlign: 'left',
+    fontWeight: '400',
+    fontSize: AppFontsSize.sm,
+    color: AppColors.descriptionColor,
+    marginHorizontal: 5,
+    marginTop: 2.7,
+    maxWidth: '65%',
   },
 });
 
