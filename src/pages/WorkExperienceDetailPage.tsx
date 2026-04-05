@@ -46,7 +46,9 @@ function WorkExperienceDetailPage(
     : ' - Present';
   const onBackNavigationHandler = () => navigation?.goBack();
   const onCompanyLinkPressHandler = () =>
-    Linking.openURL(`${workExperience?.companyUrl}`);
+    workExperience?.companyUrl
+      ? Linking.openURL(`${workExperience?.companyUrl}`)
+      : null;
   const appLinkPressHandler = () =>
     Linking.openURL(`${workExperience?.appLink}`);
   const onContractorCompanyUrlPressHandler = () =>
@@ -80,20 +82,28 @@ function WorkExperienceDetailPage(
             <Text style={styles.appName}>{workExperience?.appName}</Text>
           </Pressable>
         ) : null}
-        <Text style={styles.skillsTitle}>Technical Skills</Text>
-        {workExperience?.techSkills?.map((item: string) => (
-          <View style={styles.techSkillsRow} key={item?.toString()}>
-            <Text style={styles.techSkillsTitle}>{'\u{25C9}'}</Text>
-            <Text style={styles.techSkillsTitle}>{item}</Text>
-          </View>
-        ))}
-        <Text style={styles.skillsTitle}>Other Skills</Text>
-        {workExperience?.otherSkills?.map((item: string) => (
-          <View style={styles.techSkillsRow} key={item?.toString()}>
-            <Text style={styles.techSkillsTitle}>{'\u{25C9}'}</Text>
-            <Text style={styles.techSkillsTitle}>{item}</Text>
-          </View>
-        ))}
+        {workExperience?.isTechSkills ? (
+          <>
+            <Text style={styles.skillsTitle}>Technical Skills</Text>
+            {workExperience?.techSkills?.map((item: string) => (
+              <View style={styles.techSkillsRow} key={item?.toString()}>
+                <Text style={styles.techSkillsTitle}>{'\u{25C9}'}</Text>
+                <Text style={styles.techSkillsTitle}>{item}</Text>
+              </View>
+            ))}
+          </>
+        ) : null}
+        {workExperience?.isOtherSkills ? (
+          <>
+            <Text style={styles.skillsTitle}>Other Skills</Text>
+            {workExperience?.otherSkills?.map((item: string) => (
+              <View style={styles.techSkillsRow} key={item?.toString()}>
+                <Text style={styles.techSkillsTitle}>{'\u{25C9}'}</Text>
+                <Text style={styles.techSkillsTitle}>{item}</Text>
+              </View>
+            ))}
+          </>
+        ) : null}
         {workExperience?.isAgile ? (
           <Text style={styles.agileTitle}>
             Agile Methodologies: <Text style={styles.agileBoolean}>Yes</Text>
