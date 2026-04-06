@@ -1,10 +1,10 @@
 import React from 'react';
 import { Dimensions, Pressable, StyleSheet, Text } from 'react-native';
-import { AppColors } from '../../Theme/colors';
-import { AppFontsSize } from '../../Theme/fontSize';
+import { AppColors } from '../Theme/colors';
+import { AppFontsSize } from '../Theme/fontSize';
 import { useNavigation } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../Navigation/PagesNavigation';
+import { RootStackParamList } from '../Navigation/PagesNavigation';
 
 const { width, height } = Dimensions.get('window');
 

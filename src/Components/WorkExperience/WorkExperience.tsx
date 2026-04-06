@@ -3,7 +3,7 @@ import { Dimensions, FlatList, StyleSheet, Text, View } from 'react-native';
 import { AppFontsSize } from '../../Theme/fontSize';
 import { AppColors } from '../../Theme/colors';
 import { WorkExperienceConst } from '../../Constants/WorkExperienceConstant';
-import WorkExperienceCarousel from '../../ReusableComponents/WorkExperienceCarousel/WorkExperienceCarousel';
+import WorkExperienceCarousel from '../../WorkExperienceCarousel/WorkExperienceCarousel';
 
 const { width, height } = Dimensions.get('window');
 
