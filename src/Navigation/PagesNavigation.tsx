@@ -5,7 +5,7 @@ import WorkExperienceDetailPage from '../pages/WorkExperienceDetailPage';
 
 export type RootStackParamList = {
   Home: undefined;
-  WorkExperience: { id: number } | undefined;
+  WorkExperience: { id: number };
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
