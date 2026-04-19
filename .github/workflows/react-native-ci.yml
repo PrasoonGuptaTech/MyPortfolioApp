@@ -1,0 +1,52 @@
+name: React Native CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Install Dependencies
+        run: npm install
+      - name: Install cocoapods
+        run: sudo gem install cocoapods
+      - name: Install Pods
+        run: |
+          cd ios
+          pod install
+          cd ..
+      - name: Run Lint
+        run: npm run lint
+      - name: Run Tests
+        run: npm test
+      - name: Build Android
+        run: |
+          cd android
+          ./gradlew assembleDebug
+          cd ..
+      - name: Build IOS
+        run: |
+          cd ios
+          xcodebuild -workspace MyPortfolioApp.xcworkspace \
+          -scheme MyPortfolioApp \
+          -sdk iphonesimulator \
+          -destination 'platform=iOS Simulator,name=iPhone 14' \
+          -configuration Debug build
