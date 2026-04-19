@@ -24,8 +24,15 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+      - name: Cache gradle
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
       - name: Install cocoapods
         run: sudo gem install cocoapods
       - name: Install Pods
@@ -50,3 +57,4 @@ jobs:
           -sdk iphonesimulator \
           -destination 'platform=iOS Simulator,name=iPhone 14' \
           -configuration Debug build
+          -derivedDataPath build
