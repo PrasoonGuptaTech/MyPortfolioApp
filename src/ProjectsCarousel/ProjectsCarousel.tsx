@@ -7,10 +7,10 @@ const { width, height } = Dimensions.get('window');
 
 type ProjectCarouselItemPropType = {
   projectItem: {
-    isProjectDurationEnd: boolean;
-    projectDurationEnd: string;
-    projectName: string;
-    projectDurationStart: string;
+    isProjectDurationEnd?: boolean;
+    projectDurationEnd?: string;
+    projectName?: string;
+    projectDurationStart?: string;
   };
 };
 
