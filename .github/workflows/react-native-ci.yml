@@ -104,6 +104,6 @@ jobs:
           -workspace MyPortfolioApp.xcworkspace \
           -scheme MyPortfolioApp \
           -sdk iphonesimulator \
-          -destination 'platform=iOS Simulator,name=iPhone 14' \
+          -destination 'platform=iOS Simulator,name=iPhone 17' \
           -configuration Debug \
           -derivedDataPath build
