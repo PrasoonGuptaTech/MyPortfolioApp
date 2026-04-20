@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, Pressable, StyleSheet, Text } from 'react-native';
 import { AppColors } from '../Theme/colors';
 import { AppFontsSize } from '../Theme/fontSize';
 
@@ -20,7 +20,7 @@ function ProjectsCarousel(props: Readonly<ProjectCarouselItemPropType>) {
     ? ` - ${projectItem?.projectDurationEnd}`
     : ' - Present';
   return (
-    <View style={styles.cardView}>
+    <Pressable style={styles.cardView}>
       <Text style={styles.projectTitle} numberOfLines={1}>
         {projectItem?.projectName}
       </Text>
@@ -28,7 +28,7 @@ function ProjectsCarousel(props: Readonly<ProjectCarouselItemPropType>) {
         {projectItem?.projectDurationStart}
         {projectDuration}
       </Text>
-    </View>
+    </Pressable>
   );
 }
 
