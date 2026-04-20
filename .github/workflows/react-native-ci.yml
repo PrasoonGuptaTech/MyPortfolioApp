@@ -77,6 +77,11 @@ jobs:
           cd android
           ./gradlew assembleDebug
           cd ..
+      - name: Upload Debug Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: MyPortfolioAndroid.apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
   ios_build:
     name: IOS Build
     runs-on: macos-latest
@@ -103,7 +108,36 @@ jobs:
           xcodebuild \
           -workspace MyPortfolioApp.xcworkspace \
           -scheme MyPortfolioApp \
-          -sdk iphonesimulator \
-          -destination 'platform=iOS Simulator,name=iPhone 17' \
           -configuration Debug \
-          -derivedDataPath build
+          -destination 'generic/platform=iOS' \
+          -archivePath build/MyPortfolioApp.xcarchive \
+          -archive
+          cd ..
+      - name: Create exportOptions.plist
+        run: |
+          cat <<EOF > ios/exportOptions.plist
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+          "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key>
+            <string>development</string>
+            <key>signingStyle</key>
+            <string>automatic</string>
+          </dict>
+          </plist>
+          EOF
+      - name: Export IPA
+        run: |
+          cd ios
+          xcodebuild -exportArchive \
+          -archivePath build/MyPortfolioApp.xcarchive \
+          -exportOptionsPlist exportOptions.plist \
+          -exportPath build
+          cd ..
+      - name: Upload iOS IPA Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: MyPortfolioIOS.ipa
+          path: ios/build/*.ipa
