@@ -116,6 +116,7 @@ jobs:
           -destination 'generic/platform=iOS' \
           -archivePath build/MyPortfolioApp.xcarchive \
           CODE_SIGNING_ALLOWED=NO \
+          SKIP_INSTALL=NO \
           archive
           cd ..
       - name: Create exportOptions.plist
@@ -127,9 +128,13 @@ jobs:
           <plist version="1.0">
           <dict>
             <key>method</key>
-            <string>development</string>
+            <string>debugging</string>
             <key>signingStyle</key>
-            <string>automatic</string>
+            <string>manual</string>
+            <key>compileBitcode</key>
+            <false/>
+            <key>destination</key>
+            <string>export</string>
           </dict>
           </plist>
           EOF
