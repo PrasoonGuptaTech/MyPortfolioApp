@@ -111,6 +111,9 @@ jobs:
           -configuration Debug \
           -destination 'generic/platform=iOS' \
           -archivePath build/MyPortfolioApp.xcarchive \
+          CODE_SIGNING_ALLOWED=NO \
+          SKIP_INSTALL=NO \
+          BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
           archive
           cd ..
       - name: Create exportOptions.plist
@@ -134,7 +137,8 @@ jobs:
           xcodebuild -exportArchive \
           -archivePath build/MyPortfolioApp.xcarchive \
           -exportOptionsPlist exportOptions.plist \
-          -exportPath build
+          -exportPath build \
+          CODE_SIGNING_ALLOWED=NO
           cd ..
       - name: Upload iOS IPA Artifact
         uses: actions/upload-artifact@v4
