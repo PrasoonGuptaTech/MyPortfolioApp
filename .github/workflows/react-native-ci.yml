@@ -75,11 +75,8 @@ jobs:
             ~/.gradle/caches
             ~/.gradle/wrapper
           key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-      - name: Download Dependencies
-        uses: actions/download-artifact@v4
-        with:
-          name: node-modules
-          path: .
+      - name: Install Dependencies
+        run: npm ci
       - name: Build Android
         run: |
           cd android
