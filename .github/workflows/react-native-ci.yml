@@ -97,29 +97,12 @@ jobs:
         run: sudo gem install cocoapods
       - name: Install Dependencies
         run: npm ci
-      - name: Generate React Native Codegen
-        run: |
-          npx react-native codegen
-      - name: Prepare React Native iOS
-        run: npx react-native config
       - name: Install Pods
         run: |
-          export RCT_NEW_ARCH_ENABLED=1
           cd ios
-          pod deintegrate
           rm -rf Pods Podfile.lock
-          pod install --repo-update
+          RCT_NEW_ARCH_ENABLED=1 pod install --repo-update
           cd ..
-      - name: Bundle React Native JS
-        run: |
-          npx react-native bundle \
-            --platform ios \
-            --dev false \
-            --entry-file index.js \
-            --bundle-output ios/main.jsbundle \
-            --assets-dest ios
-      - name: Show Pods Structure
-        run: ls ios/Pods/Headers/Public
       - name: Clean Xcode DerivedData
         run: rm -rf ~/Library/Developer/Xcode/DerivedData
       - name: Build IOS
@@ -130,10 +113,9 @@ jobs:
           -scheme MyPortfolioApp \
           -configuration Release \
           -sdk iphoneos \
+          -destination 'generic/platform=iOS' \
           -archivePath build/MyPortfolioApp.xcarchive \
           CODE_SIGNING_ALLOWED=NO \
-          SWIFT_SERIALIZE_DEBUGGING_OPTIONS=NO \
-          OTHER_SWIFT_FLAGS="-no-verify-emitted-module-interface" \
           archive
           cd ..
       - name: Create exportOptions.plist
