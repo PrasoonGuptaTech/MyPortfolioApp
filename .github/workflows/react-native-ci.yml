@@ -138,17 +138,8 @@ jobs:
           </dict>
           </plist>
           EOF
-      - name: Export IPA
-        run: |
-          cd ios
-          xcodebuild -exportArchive \
-          -archivePath build/MyPortfolioApp.xcarchive \
-          -exportOptionsPlist exportOptions.plist \
-          -exportPath build \
-          CODE_SIGNING_ALLOWED=NO
-          cd ..
-      - name: Upload iOS IPA Artifact
+      - name: Upload iOS Archive Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: MyPortfolioIOS.ipa
-          path: ios/build/*.ipa
+          name: MyPortfolioIOS.xcarchive
+          path: ios/build/MyPortfolioApp.xcarchive
