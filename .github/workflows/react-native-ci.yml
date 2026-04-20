@@ -111,7 +111,7 @@ jobs:
           -configuration Debug \
           -destination 'generic/platform=iOS' \
           -archivePath build/MyPortfolioApp.xcarchive \
-          -archive
+          archive
           cd ..
       - name: Create exportOptions.plist
         run: |
