@@ -105,13 +105,21 @@ jobs:
           cd ..
       - name: Clean Xcode DerivedData
         run: rm -rf ~/Library/Developer/Xcode/DerivedData
+      - name: Bundle React Native JS
+        run: |
+          npx react-native bundle \
+            --platform ios \
+            --dev false \
+            --entry-file index.js \
+            --bundle-output ios/main.jsbundle \
+            --assets-dest ios
       - name: Build IOS
         run: |
           cd ios
           xcodebuild \
           -workspace MyPortfolioApp.xcworkspace \
           -scheme MyPortfolioApp \
-          -configuration Debug \
+          -configuration Release \
           -sdk iphoneos \
           -archivePath build/MyPortfolioApp.xcarchive \
           CODE_SIGNING_ALLOWED=NO \
