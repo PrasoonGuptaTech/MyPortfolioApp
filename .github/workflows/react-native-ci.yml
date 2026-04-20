@@ -10,6 +10,8 @@ on:
         description: "Skip Unit Tests"
         required: false
         default: "false"
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 jobs:
   build:
     name: Setup
