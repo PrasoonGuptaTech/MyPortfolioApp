@@ -97,10 +97,14 @@ jobs:
         run: sudo gem install cocoapods
       - name: Install Dependencies
         run: npm ci
+      - name: Generate React Native Codegen
+        run: |
+          npx react-native codegen
       - name: Install Pods
         run: |
           cd ios
           pod deintegrate
+          rm -rf Pods Podfile.lock
           pod install --repo-update
           cd ..
       - name: Clean Xcode DerivedData
