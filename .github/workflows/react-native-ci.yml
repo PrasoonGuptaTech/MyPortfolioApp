@@ -104,6 +104,7 @@ jobs:
         run: npx react-native config
       - name: Install Pods
         run: |
+          export RCT_NEW_ARCH_ENABLED=1
           cd ios
           pod deintegrate
           rm -rf Pods Podfile.lock
