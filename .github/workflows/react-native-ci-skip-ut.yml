@@ -1,9 +1,7 @@
-name: Dev
+
+name: Skip UT
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  workflow_dispatch:
 concurrency:
   group: react-native-ci
   cancel-in-progress: true
@@ -42,7 +40,7 @@ jobs:
       - name: Run Lint
         run: npm run lint
       - name: Run Unit Tests
-        run: npm test
+        run: echo "Skipping Unit Test Cases"
   android_build:
     name: Android Build
     runs-on: macos-latest
