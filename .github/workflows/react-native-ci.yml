@@ -102,6 +102,8 @@ jobs:
           cd ios
           pod install
           cd ..
+      - name: Clean Xcode DerivedData
+        run: rm -rf ~/Library/Developer/Xcode/DerivedData
       - name: Build IOS
         run: |
           cd ios
@@ -112,6 +114,7 @@ jobs:
           -destination 'generic/platform=iOS' \
           -archivePath build/MyPortfolioApp.xcarchive \
           CODE_SIGNING_ALLOWED=NO \
+          OTHER_SWIFT_FLAGS="-no-verify-emitted-module-interface" \
           SKIP_INSTALL=NO \
           BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
           archive
