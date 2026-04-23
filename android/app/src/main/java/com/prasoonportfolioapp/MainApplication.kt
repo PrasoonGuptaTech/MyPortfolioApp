@@ -1,4 +1,4 @@
-package com.myportfolioapp
+package com.prasoonportfolioapp
 
 import android.app.Application
 import com.facebook.react.PackageList
