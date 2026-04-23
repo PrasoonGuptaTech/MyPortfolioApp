@@ -1,4 +1,3 @@
-
 name: Skip UT
 on:
   workflow_dispatch:
@@ -6,134 +5,96 @@ concurrency:
   group: react-native-ci
   cancel-in-progress: true
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  NODE_VERSION: 20
 jobs:
   build:
     name: Setup
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-      - name: Cache node modules
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-      - name: Cache gradle
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
       - name: Install Dependencies
         run: npm ci
       - name: Run Lint
         run: npm run lint
-      - name: Run Unit Tests
-        run: echo "Skipping Unit Test Cases"
+      - name: Generate Unit Test Coverage
+        run: echo "Skipping Unit Test Coverage"
   android_build:
     name: Android Build
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
-      - name: Cache gradle
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          cache: gradle
       - name: Install Dependencies
         run: npm ci
       - name: Build Android
         run: |
           cd android
-          ./gradlew assembleDebug
+          ./gradlew assembleDebug --build-cache
           cd ..
       - name: Upload Debug Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: MyPortfolioAndroid.apk
+          name: PrasoonPortfolioAndroid.apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
   ios_build:
     name: IOS Build
     runs-on: macos-latest
     needs: build
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-      - name: Install cocoapods
-        run: sudo gem install cocoapods
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
       - name: Install Dependencies
         run: npm ci
       - name: Install Pods
+        uses: actions/cache@v4
+        with: 
+          path: ios/pods
+          key: pods-${{ runner.os }}-${{ hashFiles('ios/Podfile.lock') }}
+          restore-keys: |
+            pods-${{ runner.os }}
+      - name: Install cocoapods
         run: |
+          sudo gem install cocoapods
           cd ios
-          rm -rf Pods Podfile.lock
-          RCT_NEW_ARCH_ENABLED=1 pod install --repo-update
+          pod install --repo-update
           cd ..
-      - name: Clean Xcode DerivedData
-        run: rm -rf ~/Library/Developer/Xcode/DerivedData
       - name: Build IOS
         run: |
           cd ios
           xcodebuild \
-          -workspace MyPortfolioApp.xcworkspace \
-          -scheme MyPortfolioApp \
+          -workspace PrasoonPortfolioApp.xcworkspace \
+          -scheme PrasoonPortfolioApp \
           -configuration Release \
           -sdk iphoneos \
           -destination 'generic/platform=iOS' \
-          -archivePath build/MyPortfolioApp.xcarchive \
+          -archivePath build/PrasoonPortfolioApp.xcarchive \
           CODE_SIGNING_ALLOWED=NO \
           SKIP_INSTALL=NO \
           archive
           cd ..
-      - name: Create exportOptions.plist
-        run: |
-          cat <<EOF > ios/exportOptions.plist
-          <?xml version="1.0" encoding="UTF-8"?>
-          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
-          "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-          <plist version="1.0">
-          <dict>
-            <key>method</key>
-            <string>development</string>
-            <key>signingStyle</key>
-            <string>manual</string>
-            <key>compileBitcode</key>
-            <false/>
-            <key>destination</key>
-            <string>export</string>
-          </dict>
-          </plist>
-          EOF
       - name: Upload iOS Archive Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: MyPortfolioIOS.xcarchive
-          path: ios/build/MyPortfolioApp.xcarchive
+          name: PrasoonPortfolioIOS.xcarchive
+          path: ios/build/PrasoonPortfolioApp.xcarchive

@@ -61,7 +61,7 @@ jobs:
       - name: Upload Debug Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: MyPortfolioAndroid.apk
+          name: PrasoonPortfolioAndroid.apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
   ios_build:
     name: IOS Build
@@ -93,12 +93,12 @@ jobs:
         run: |
           cd ios
           xcodebuild \
-          -workspace MyPortfolioApp.xcworkspace \
-          -scheme MyPortfolioApp \
+          -workspace PrasoonPortfolioApp.xcworkspace \
+          -scheme PrasoonPortfolioApp \
           -configuration Release \
           -sdk iphoneos \
           -destination 'generic/platform=iOS' \
-          -archivePath build/MyPortfolioApp.xcarchive \
+          -archivePath build/PrasoonPortfolioApp.xcarchive \
           CODE_SIGNING_ALLOWED=NO \
           SKIP_INSTALL=NO \
           archive
@@ -106,5 +106,5 @@ jobs:
       - name: Upload iOS Archive Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: MyPortfolioIOS.xcarchive
-          path: ios/build/MyPortfolioApp.xcarchive
+          name: PrasoonPortfolioIOS.xcarchive
+          path: ios/build/PrasoonPortfolioApp.xcarchive
