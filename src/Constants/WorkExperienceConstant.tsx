@@ -54,8 +54,7 @@ export const WorkExperienceConst = [
       'Global leader in Next-Generation Digital services, Consulting, and AI-powered Enterprise Solutions',
     isAppLink: true,
     appName: 'TractorSupply Co.',
-    appLink:
-      'https://play.google.com/store/apps/details?id=com.consumerapp_v1&hl=en_IN',
+    appLink: 'https://play.google.com/store/apps/details?id=com.consumerapp_v1&hl=en_IN',
     isTechSkills: true,
     techSkills: [
       'React Native',
@@ -97,19 +96,12 @@ export const WorkExperienceConst = [
     isCompanyPresentEmployee: false,
     companyDurationStart: 'Jan 2021',
     companyDurationEnd: 'Mar 2021',
-    companyDescription:
-      'Software Development Company',
+    companyDescription: 'Software Development Company',
     isAppLink: false,
     appName: '',
-    appLink:
-      '',
+    appLink: '',
     isTechSkills: true,
-    techSkills: [
-      'React Native',
-      'Javascript',
-      'Redux',
-      'Restful APIs',
-    ],
+    techSkills: ['React Native', 'Javascript', 'Redux', 'Restful APIs'],
     isOtherSkills: true,
     otherSkills: ['GitLab', 'Firebase'],
     isAgile: false,
@@ -140,17 +132,12 @@ export const WorkExperienceConst = [
     isCompanyPresentEmployee: false,
     companyDurationStart: 'Nov 2019',
     companyDurationEnd: 'Nov 2020',
-    companyDescription:
-      'Leading Electronics Components Distributor.',
+    companyDescription: 'Leading Electronics Components Distributor.',
     isAppLink: false,
     appName: '',
-    appLink:
-      '',
+    appLink: '',
     isTechSkills: true,
-    techSkills: [
-      'Nuvoton MicroControllers',
-      'ST MicroControllers',
-    ],
+    techSkills: ['Nuvoton MicroControllers', 'ST MicroControllers'],
     isOtherSkills: false,
     otherSkills: [],
     isAgile: false,
@@ -181,16 +168,12 @@ export const WorkExperienceConst = [
     isCompanyPresentEmployee: false,
     companyDurationStart: 'Sept 2017',
     companyDurationEnd: 'Oct 2019',
-    companyDescription:
-      'Stabilizer Development Company',
+    companyDescription: 'Stabilizer Development Company',
     isAppLink: false,
     appName: '',
-    appLink:
-      '',
+    appLink: '',
     isTechSkills: true,
-    techSkills: [
-      'Atmel MicroControllers',
-    ],
+    techSkills: ['Atmel MicroControllers'],
     isOtherSkills: false,
     otherSkills: [],
     isAgile: false,

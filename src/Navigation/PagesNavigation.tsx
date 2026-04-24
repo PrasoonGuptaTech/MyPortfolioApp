@@ -14,10 +14,7 @@ function PagesNavigation() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Home" component={MainPage} />
-      <Stack.Screen
-        name="WorkExperience"
-        component={WorkExperienceDetailPage}
-      />
+      <Stack.Screen name="WorkExperience" component={WorkExperienceDetailPage} />
     </Stack.Navigator>
   );
 }

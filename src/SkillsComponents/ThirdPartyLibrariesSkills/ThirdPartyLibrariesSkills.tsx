@@ -9,10 +9,10 @@ function ThirdPartyLibrariesSkills() {
       <Text style={styles.headingTitle}>Third Party Library Integration:</Text>
       <View style={styles.rowView}>
         <View style={styles.skillsLayout}>
-            <Text style={styles.skillsTitle}>Redux</Text>
+          <Text style={styles.skillsTitle}>Redux</Text>
         </View>
         <View style={styles.skillsLayout}>
-            <Text style={styles.skillsTitle}>Rest API's</Text>
+          <Text style={styles.skillsTitle}>Rest API's</Text>
         </View>
       </View>
     </View>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     borderColor: AppColors.skillsColor,
     borderRadius: 10,
     padding: 3,
-  }
+  },
 });
 
 export default ThirdPartyLibrariesSkills;

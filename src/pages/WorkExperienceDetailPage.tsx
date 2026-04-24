@@ -27,16 +27,12 @@ type WorkExperienceDetailPageProps = {
   };
 };
 
-function WorkExperienceDetailPage(
-  props: Readonly<WorkExperienceDetailPageProps>,
-) {
+function WorkExperienceDetailPage(props: Readonly<WorkExperienceDetailPageProps>) {
   const { route } = props;
   const { params } = route;
   const { id } = params;
   const navigation = useNavigation();
-  const filteredWorkExperience = WorkExperienceConst.find(
-    item => item?.id === id,
-  );
+  const filteredWorkExperience = WorkExperienceConst.find(item => item?.id === id);
   const workExperience = filteredWorkExperience;
   const companyPresentEmployee = workExperience?.isCompanyPresentEmployee
     ? ' - Present'
@@ -46,29 +42,19 @@ function WorkExperienceDetailPage(
     : ' - Present';
   const onBackNavigationHandler = () => navigation?.goBack();
   const onCompanyLinkPressHandler = () =>
-    workExperience?.companyUrl
-      ? Linking.openURL(`${workExperience?.companyUrl}`)
-      : null;
-  const appLinkPressHandler = () =>
-    Linking.openURL(`${workExperience?.appLink}`);
+    workExperience?.companyUrl ? Linking.openURL(`${workExperience?.companyUrl}`) : null;
+  const appLinkPressHandler = () => Linking.openURL(`${workExperience?.appLink}`);
   const onContractorCompanyUrlPressHandler = () =>
     Linking.openURL(`${workExperience?.contactorCompanyUrl}`);
   return (
     <SafeAreaView>
       <ScrollView style={styles.layout}>
         <Pressable onPress={onBackNavigationHandler}>
-          <Image
-            source={require('../Assets/Images/BackArrow.png')}
-            style={styles.backArrowView}
-          />
+          <Image source={require('../Assets/Images/BackArrow.png')} style={styles.backArrowView} />
         </Pressable>
-        <Text style={styles.profileNameTitle}>
-          {workExperience?.profileName}
-        </Text>
+        <Text style={styles.profileNameTitle}>{workExperience?.profileName}</Text>
         <Pressable onPress={onCompanyLinkPressHandler}>
-          <Text style={styles.companyNameTitle}>
-            {workExperience?.companyName}
-          </Text>
+          <Text style={styles.companyNameTitle}>{workExperience?.companyName}</Text>
         </Pressable>
         <Text style={styles.companyTimeline}>
           {workExperience?.companyDurationStart}
@@ -141,16 +127,12 @@ function WorkExperienceDetailPage(
             <View style={styles.projectDescriptionRow}>
               <Text style={styles.projectRadio}>{'\u{25C9}'}</Text>
               <Text style={styles.projectTitle}>Title:</Text>
-              <Text style={styles.projectTitleValue}>
-                {workExperience?.projectName}
-              </Text>
+              <Text style={styles.projectTitleValue}>{workExperience?.projectName}</Text>
             </View>
             <View style={styles.projectDescriptionRow}>
               <Text style={styles.projectRadio}>{'\u{25C9}'}</Text>
               <Text style={styles.projectTitle}>Description:</Text>
-              <Text style={styles.projectTitleValue}>
-                {workExperience?.projectDescription}
-              </Text>
+              <Text style={styles.projectTitleValue}>{workExperience?.projectDescription}</Text>
             </View>
             <View style={styles.projectDescriptionRow}>
               <Text style={styles.projectRadio}>{'\u{25C9}'}</Text>
@@ -164,9 +146,7 @@ function WorkExperienceDetailPage(
         ) : null}
         <View style={styles.experienceLetterRow}>
           <Text style={styles.experienceLetterTitle}>IT Sector: </Text>
-          <Text style={styles.workExperienceLetterName}>
-            {workExperience?.iTSectorBased}
-          </Text>
+          <Text style={styles.workExperienceLetterName}>{workExperience?.iTSectorBased}</Text>
         </View>
         {workExperience?.isContractor ? (
           <View style={styles.experienceLetterRow}>

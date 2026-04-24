@@ -9,18 +9,18 @@ function MonitoringTools() {
       <Text style={styles.headingTitle}>Monitoring Tools:</Text>
       <View style={styles.rowView}>
         <View style={styles.skillsLayout}>
-            <Text style={styles.skillsTitle}>Firebase</Text>
+          <Text style={styles.skillsTitle}>Firebase</Text>
         </View>
         <View style={styles.skillsLayout}>
-            <Text style={styles.skillsTitle}>Dynatrae</Text>
+          <Text style={styles.skillsTitle}>Dynatrae</Text>
         </View>
       </View>
       <View style={styles.rowView}>
         <View style={styles.skillsLayout}>
-            <Text style={styles.skillsTitle}>Quantum</Text>
+          <Text style={styles.skillsTitle}>Quantum</Text>
         </View>
         <View style={styles.skillsLayout}>
-            <Text style={styles.skillsTitle}>Analytics</Text>
+          <Text style={styles.skillsTitle}>Analytics</Text>
         </View>
       </View>
     </View>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     borderColor: AppColors.skillsColor,
     borderRadius: 10,
     padding: 3,
-  }
+  },
 });
 
 export default MonitoringTools;

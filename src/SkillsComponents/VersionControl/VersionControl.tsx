@@ -9,7 +9,7 @@ function VersionControl() {
       <Text style={styles.headingTitle}>Version Control:</Text>
       <View style={styles.rowView}>
         <View style={styles.skillsLayout}>
-            <Text style={styles.skillsTitle}>GitHub</Text>
+          <Text style={styles.skillsTitle}>GitHub</Text>
         </View>
       </View>
     </View>
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     borderColor: AppColors.skillsColor,
     borderRadius: 10,
     padding: 3,
-  }
+  },
 });
 
 export default VersionControl;

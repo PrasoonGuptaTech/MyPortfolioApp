@@ -9,10 +9,10 @@ function ProgrammingLangSkills() {
       <Text style={styles.headingTitle}>Programming Languages:</Text>
       <View style={styles.rowView}>
         <View style={styles.skillsLayout}>
-            <Text style={styles.skillsTitle}>Javascript (ES6+)</Text>
+          <Text style={styles.skillsTitle}>Javascript (ES6+)</Text>
         </View>
         <View style={styles.skillsLayout}>
-            <Text style={styles.skillsTitle}>Typescript</Text>
+          <Text style={styles.skillsTitle}>Typescript</Text>
         </View>
       </View>
     </View>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     borderColor: AppColors.skillsColor,
     borderRadius: 10,
     padding: 3,
-  }
+  },
 });
 
 export default ProgrammingLangSkills;

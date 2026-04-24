@@ -19,10 +19,7 @@ type WorkExperiencePropsType = {
   };
 };
 
-type WorkExperienceNavigationProp = StackNavigationProp<
-  RootStackParamList,
-  'WorkExperience'
->;
+type WorkExperienceNavigationProp = StackNavigationProp<RootStackParamList, 'WorkExperience'>;
 
 function WorkExperienceCarousel(props: Readonly<WorkExperiencePropsType>) {
   const { workExperienceItem } = props;
@@ -51,9 +48,7 @@ function WorkExperienceCarousel(props: Readonly<WorkExperiencePropsType>) {
           {workExperienceItem?.companyName}
         </Text>
       )}
-      {!!(
-        workExperienceItem?.companyDurationStart && companyPresentEmployee
-      ) && (
+      {!!(workExperienceItem?.companyDurationStart && companyPresentEmployee) && (
         <Text style={styles.durationTitle} numberOfLines={1}>
           {workExperienceItem?.companyDurationStart}
           {`${companyPresentEmployee}`}

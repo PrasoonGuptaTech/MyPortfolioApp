@@ -9,7 +9,7 @@ function MobileDevelopmentSkills() {
       <Text style={styles.headingTitle}>Mobile Development:</Text>
       <View style={styles.rowView}>
         <View style={styles.skillsLayout}>
-            <Text style={styles.skillsTitle}>React Native</Text>
+          <Text style={styles.skillsTitle}>React Native</Text>
         </View>
       </View>
     </View>
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     borderColor: AppColors.skillsColor,
     borderRadius: 10,
     padding: 3,
-  }
+  },
 });
 
 export default MobileDevelopmentSkills;

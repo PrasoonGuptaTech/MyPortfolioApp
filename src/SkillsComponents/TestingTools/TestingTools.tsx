@@ -9,10 +9,10 @@ function TestingTools() {
       <Text style={styles.headingTitle}>Testing Tools:</Text>
       <View style={styles.rowView}>
         <View style={styles.skillsLayout}>
-            <Text style={styles.skillsTitle}>Jest</Text>
+          <Text style={styles.skillsTitle}>Jest</Text>
         </View>
         <View style={styles.skillsLayout}>
-            <Text style={styles.skillsTitle}>Testing Library</Text>
+          <Text style={styles.skillsTitle}>Testing Library</Text>
         </View>
       </View>
     </View>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     borderColor: AppColors.skillsColor,
     borderRadius: 10,
     padding: 3,
-  }
+  },
 });
 
 export default TestingTools;

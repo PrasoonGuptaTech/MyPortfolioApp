@@ -9,7 +9,7 @@ function PipelineSkills() {
       <Text style={styles.headingTitle}>DevOps:</Text>
       <View style={styles.rowView}>
         <View style={styles.skillsLayout}>
-            <Text style={styles.skillsTitle}>CI/CD</Text>
+          <Text style={styles.skillsTitle}>CI/CD</Text>
         </View>
       </View>
     </View>
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     borderColor: AppColors.skillsColor,
     borderRadius: 10,
     padding: 3,
-  }
+  },
 });
 
 export default PipelineSkills;
