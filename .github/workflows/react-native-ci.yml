@@ -32,6 +32,10 @@ jobs:
         run: npm run lint
       - name: Generate Unit Test Coverage
         run: npm test -- --coverage
+      - name: Sonarqube scan
+        run: npx sonar-scanner
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: Upload Coverage Artifact
         if: success()
         uses: actions/upload-artifact@v4
