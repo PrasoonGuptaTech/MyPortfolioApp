@@ -1,0 +1,6 @@
+projectKey=PrasoonPortfolioApp
+serverUrl=http://localhost:9000
+serverVersion=26.4.0.121862
+dashboardUrl=http://localhost:9000/dashboard?id=PrasoonPortfolioApp
+ceTaskId=b67705c3-6ade-457c-8488-90c3b7b9b8cc
+ceTaskUrl=http://localhost:9000/api/ce/task?id=b67705c3-6ade-457c-8488-90c3b7b9b8cc
