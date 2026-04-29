@@ -28,6 +28,8 @@ jobs:
         run: npm run lint
       - name: Generate Unit Test Coverage
         run: echo "Skipping Unit Test Coverage"
+      - name: Sonarqube scan
+        run: echo "Skipping Sonarqube Scan"
   android_build:
     name: Android Build
     runs-on: ubuntu-latest
