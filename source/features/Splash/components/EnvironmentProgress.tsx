@@ -1,13 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { PortfolioColors } from '../../../constants/colors';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../../navigation/PagesNavigation';
+
+type EnvironmentProgressNavigationProp = StackNavigationProp<RootStackParamList, 'Onboarding'>;
 
 function EnvironmentProgress() {
   const [progressTime, setProgressTime] = useState<number>(0);
   const environmentText = useRef('');
   const styles = EnvironmentProgressStyles(progressTime);
+  const navigation = useNavigation<EnvironmentProgressNavigationProp>();
   useEffect(() => {
     if (progressTime >= 100) {
+      navigation.navigate('Onboarding');
       return;
     }
     if (progressTime % 30 === 0) {
@@ -17,7 +24,7 @@ function EnvironmentProgress() {
       setProgressTime(prev => prev + 10);
     }, 1000);
     return () => clearInterval(progressTimeOut);
-  }, [progressTime]);
+  }, [progressTime, navigation]);
   return (
     <View style={styles.environmentProgressContainer}>
       <View style={styles.progressBarView}>
@@ -36,7 +43,7 @@ function EnvironmentProgress() {
 const EnvironmentProgressStyles = (progressTime: number) =>
   StyleSheet.create({
     environmentProgressContainer: {
-      marginTop: 16,
+      marginTop: 48,
     },
     progressBarView: {
       width: 310,
