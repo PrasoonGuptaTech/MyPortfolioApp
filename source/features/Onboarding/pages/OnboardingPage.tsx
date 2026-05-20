@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { PortfolioColors } from '../../../constants/colors';
 import OnboardingHeader from '../components/OnboardingHeader';
 import OnboardingTechStack from '../components/OnboardingTechStack';
+import OnboardingFooter from '../components/OnboardingFooter';
 
 const { width, height } = Dimensions.get('window');
 
@@ -13,6 +14,7 @@ function OnboardingPage() {
       <View style={styles.OnboardingOuterLayout}>
         <OnboardingHeader />
         <OnboardingTechStack />
+        <OnboardingFooter />
       </View>
     </SafeAreaView>
   );

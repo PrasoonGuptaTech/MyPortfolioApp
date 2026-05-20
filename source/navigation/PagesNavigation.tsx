@@ -2,10 +2,12 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import SplashPage from '../features/Splash/pages/SplashPage';
 import OnboardingPage from '../features/Onboarding/pages/OnboardingPage';
+import HomeDashboard from '../features/Home/pages/HomeDashboardPage';
 
 export type RootStackParamList = {
   Splash: undefined;
   Onboarding: undefined;
+  Home: undefined;
 };
 
 const PagesStack = createStackNavigator<RootStackParamList>();
@@ -19,6 +21,7 @@ function PagesNavigation() {
         component={OnboardingPage}
         options={{ headerShown: false }}
       />
+      <PagesStack.Screen name="Home" component={HomeDashboard} options={{ headerShown: false }} />
     </PagesStack.Navigator>
   );
 }
