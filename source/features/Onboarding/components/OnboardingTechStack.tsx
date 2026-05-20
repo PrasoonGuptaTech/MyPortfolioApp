@@ -1,5 +1,7 @@
 import React from 'react';
-import { Dimensions, ImageBackground, StyleSheet, Text } from 'react-native';
+import { Dimensions, ImageBackground, StyleSheet } from 'react-native';
+import FloatingBubbles from './FloatingBubbles';
+import { PortfolioFloatingTechStack } from '../../../constants/floatingTechStack';
 
 const { height } = Dimensions.get('window');
 
@@ -9,7 +11,26 @@ function OnboardingTechStack() {
       source={require('../../../assets/Images/OnboardingBackground.png')}
       style={styles.onboardingBackgroundImage}
     >
-      <Text>Floating Bubbles</Text>
+      {PortfolioFloatingTechStack?.map(item => (
+        <FloatingBubbles
+          key={item?.id}
+          floatingBubbleTitle={item?.title}
+          floatingBubbleImage={item?.titleLogo}
+          floatingBubbleStyle={{
+            top: item?.titleTopView,
+            left: item?.titleLeftView,
+            width: item?.titleWidth,
+            backgroundColor: item?.titleBackgroundColor,
+          }}
+          floatingImageStyle={{
+            width: item?.iconWidth,
+            height: item?.iconHeight,
+          }}
+          floatingTextStyle={{
+            color: item?.techNameColor,
+          }}
+        />
+      ))}
     </ImageBackground>
   );
 }
@@ -19,8 +40,6 @@ const styles = StyleSheet.create({
     width: '100%',
     height: height * 0.433,
     marginTop: 8,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 });
 
