@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		269C5C2DCBC21E453EC51281 /* libPods-PrasoonPortfolioApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 669081F41F0730863FEFF0F6 /* libPods-PrasoonPortfolioApp.a */; };
 		4361DFC6AE4599F3100F7743 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		CF62049FBA73EB5E92458222 /* libPods-PrasoonPortfolioApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABC669DC3BF620C40BD7BC94 /* libPods-PrasoonPortfolioApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,12 +19,12 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PrasoonPortfolioApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PrasoonPortfolioApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = PrasoonPortfolioApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		669081F41F0730863FEFF0F6 /* libPods-PrasoonPortfolioApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PrasoonPortfolioApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = PrasoonPortfolioApp/AppDelegate.swift; sourceTree = "<group>"; };
-		7C608ACA826C3B37D23127AC /* Pods-PrasoonPortfolioApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrasoonPortfolioApp.release.xcconfig"; path = "Target Support Files/Pods-PrasoonPortfolioApp/Pods-PrasoonPortfolioApp.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PrasoonPortfolioApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BC1E903A4609F6B59A4C3439 /* Pods-PrasoonPortfolioApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrasoonPortfolioApp.debug.xcconfig"; path = "Target Support Files/Pods-PrasoonPortfolioApp/Pods-PrasoonPortfolioApp.debug.xcconfig"; sourceTree = "<group>"; };
+		92D1419E67F30AC8B25B17F3 /* Pods-PrasoonPortfolioApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrasoonPortfolioApp.release.xcconfig"; path = "Target Support Files/Pods-PrasoonPortfolioApp/Pods-PrasoonPortfolioApp.release.xcconfig"; sourceTree = "<group>"; };
+		ABC669DC3BF620C40BD7BC94 /* libPods-PrasoonPortfolioApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PrasoonPortfolioApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F40BA437A0F964A51A977EAA /* Pods-PrasoonPortfolioApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrasoonPortfolioApp.debug.xcconfig"; path = "Target Support Files/Pods-PrasoonPortfolioApp/Pods-PrasoonPortfolioApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,7 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				269C5C2DCBC21E453EC51281 /* libPods-PrasoonPortfolioApp.a in Frameworks */,
+				CF62049FBA73EB5E92458222 /* libPods-PrasoonPortfolioApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				669081F41F0730863FEFF0F6 /* libPods-PrasoonPortfolioApp.a */,
+				ABC669DC3BF620C40BD7BC94 /* libPods-PrasoonPortfolioApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -92,8 +92,8 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BC1E903A4609F6B59A4C3439 /* Pods-PrasoonPortfolioApp.debug.xcconfig */,
-				7C608ACA826C3B37D23127AC /* Pods-PrasoonPortfolioApp.release.xcconfig */,
+				F40BA437A0F964A51A977EAA /* Pods-PrasoonPortfolioApp.debug.xcconfig */,
+				92D1419E67F30AC8B25B17F3 /* Pods-PrasoonPortfolioApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -105,13 +105,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PrasoonPortfolioApp" */;
 			buildPhases = (
-				7F6A7984D581FC33E1F2E110 /* [CP] Check Pods Manifest.lock */,
+				DF28823B57FAC00CAF61212F /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				B45BF19FF1B8AED5CDC980CB /* [CP] Embed Pods Frameworks */,
-				49E05D738FBADD3F767B7F1C /* [CP] Copy Pods Resources */,
+				FB92DBE600982AE8EB67029E /* [CP] Embed Pods Frameworks */,
+				C8F2A9F1BC0299CA9933679C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,7 +183,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"\\\"$WITH_ENVIRONMENT\\\" \\\"$REACT_NATIVE_XCODE\\\"\"\n";
 		};
-		49E05D738FBADD3F767B7F1C /* [CP] Copy Pods Resources */ = {
+		C8F2A9F1BC0299CA9933679C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -200,7 +200,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PrasoonPortfolioApp/Pods-PrasoonPortfolioApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7F6A7984D581FC33E1F2E110 /* [CP] Check Pods Manifest.lock */ = {
+		DF28823B57FAC00CAF61212F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -222,7 +222,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B45BF19FF1B8AED5CDC980CB /* [CP] Embed Pods Frameworks */ = {
+		FB92DBE600982AE8EB67029E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -255,7 +255,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC1E903A4609F6B59A4C3439 /* Pods-PrasoonPortfolioApp.debug.xcconfig */;
+			baseConfigurationReference = F40BA437A0F964A51A977EAA /* Pods-PrasoonPortfolioApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -286,7 +286,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C608ACA826C3B37D23127AC /* Pods-PrasoonPortfolioApp.release.xcconfig */;
+			baseConfigurationReference = 92D1419E67F30AC8B25B17F3 /* Pods-PrasoonPortfolioApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
