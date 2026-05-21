@@ -1,11 +1,13 @@
 import React from 'react';
-import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { PortfolioColors } from '../../../constants/colors';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../navigation/PagesNavigation';
 import { useNavigation } from '@react-navigation/native';
 
 type OnboardingNavigationProps = StackNavigationProp<RootStackParamList, 'Home'>;
+
+const {width} = Dimensions.get('window');
 
 function OnboardingFooter() {
   const navigation = useNavigation<OnboardingNavigationProps>();
@@ -32,7 +34,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   footerCTA: {
-    width: 292,
+    width: width * 0.726,
     height: 50,
     borderWidth: 1,
     borderColor: PortfolioColors.black,
