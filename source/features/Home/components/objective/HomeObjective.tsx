@@ -1,6 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import { PortfolioColors } from '../../../../constants/colors';
+
+const { width, height } = Dimensions.get('window');
+console.log(height);
 
 function HomeObjective() {
   return (
@@ -17,8 +20,8 @@ function HomeObjective() {
 
 const styles = StyleSheet.create({
   objectiveView: {
-    width: 350,
-    height: 176,
+    width: width * 0.87,
+    height: height * 0.2,
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
@@ -26,7 +29,7 @@ const styles = StyleSheet.create({
     borderColor: PortfolioColors.black,
     borderRadius: 20,
     backgroundColor: PortfolioColors.deepOrange,
-    marginTop: 30,
+    marginVertical: 30,
     padding: 24,
   },
   objectiveHeadingStyle: {
