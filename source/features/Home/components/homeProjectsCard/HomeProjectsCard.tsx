@@ -1,8 +1,29 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
+import { PortfolioProjects } from '../../../../constants/projects';
+import Card from '../Card/Card';
 
 function HomeProjectsCard() {
-  return <Text>Card</Text>;
+  const projectCardRenderItem = ({ item }: { item: any }) => {
+    return <Card projectItem={item} />;
+  };
+  return (
+    <View style={styles.projectsContainerView}>
+      <FlatList
+        data={PortfolioProjects}
+        keyExtractor={(item: any) => item?.id}
+        renderItem={projectCardRenderItem}
+        horizontal={true}
+      />
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  projectsContainerView: {
+    justifyContent: 'center',
+    marginVertical: 10,
+  },
+});
 
 export default HomeProjectsCard;

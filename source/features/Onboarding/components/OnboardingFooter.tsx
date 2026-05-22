@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   footerTextStyle: {
-    fontWeight: 900,
+    fontWeight: '900',
     fontSize: 14,
     letterSpacing: 0.8,
     fontStyle: 'normal',

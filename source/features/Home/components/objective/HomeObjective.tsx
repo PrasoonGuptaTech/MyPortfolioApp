@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     padding: 24,
   },
   objectiveHeadingStyle: {
-    fontWeight: 700,
+    fontWeight: '700',
     fontSize: 24,
     letterSpacing: 0,
     color: PortfolioColors.white,

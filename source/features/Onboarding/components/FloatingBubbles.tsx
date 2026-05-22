@@ -55,7 +55,7 @@ const styles = () =>
       paddingHorizontal: 8,
     },
     techStackName: {
-      fontWeight: 600,
+      fontWeight: '600',
       fontSize: 13,
       letterSpacing: 0.65,
       fontStyle: 'normal',

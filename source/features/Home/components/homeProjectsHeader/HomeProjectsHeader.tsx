@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     marginTop: Platform.OS === 'android' ? 8 : 4,
   },
   headerTitle: {
-    fontWeight: 700,
+    fontWeight: '700',
     fontSize: 24,
     letterSpacing: 0,
     color: PortfolioColors.grey900,
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   ctaTitle: {
-    fontWeight: 600,
+    fontWeight: '600',
     fontSize: 13,
     letterSpacing: 0.65,
     color: PortfolioColors.black,

@@ -59,7 +59,7 @@ const EnvironmentProgressStyles = (progressTime: number) =>
       justifyContent: 'space-between',
     },
     initializingEnvironmentText: {
-      fontWeight: 600,
+      fontWeight: '600',
       fontSize: 13,
       letterSpacing: 0.65,
       color: PortfolioColors.darkGrey,
@@ -67,7 +67,7 @@ const EnvironmentProgressStyles = (progressTime: number) =>
       textAlign: 'center',
     },
     progressPercentageText: {
-      fontWeight: 700,
+      fontWeight: '700',
       fontSize: 13,
       letterSpacing: 0.65,
       color: PortfolioColors.grey900,

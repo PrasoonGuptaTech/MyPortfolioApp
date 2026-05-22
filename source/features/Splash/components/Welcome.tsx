@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   welcomeText: {
-    fontWeight: 800,
+    fontWeight: '800',
     fontSize: 36,
     letterSpacing: -1.2,
     color: PortfolioColors.black,
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   portfolioText: {
-    fontWeight: 600,
+    fontWeight: '600',
     fontSize: 13,
     letterSpacing: 1.3,
     color: PortfolioColors.darkGrey,

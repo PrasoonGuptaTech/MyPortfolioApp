@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     marginLeft: 8,
   },
   profileName: {
-    fontWeight: 700,
+    fontWeight: '700',
     fontSize: 20,
     letterSpacing: 0,
     color: PortfolioColors.black,
