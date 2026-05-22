@@ -10,4 +10,5 @@ export const PortfolioColors = {
   paleGrey: '#E3E2DF',
   mintGreen: '#D3FFC6',
   darkOlive: '#171E00',
+  deepOrange: '#FB5F18',
 };

@@ -1,6 +1,8 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 import { PortfolioColors } from '../../../../constants/colors';
+
+const {width} = Dimensions.get('window')
 
 function HomeProfile() {
   return (
@@ -23,7 +25,7 @@ function HomeProfile() {
 
 const styles = StyleSheet.create({
   profilerContainerView: {
-    width: 206,
+    width: width * 0.51,
     height: 52,
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -52,7 +54,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
   },
   buttonCTAView: {
-    width: 166,
+    width: width * 0.43,
     height: 32,
     borderWidth: 1,
     borderColor: PortfolioColors.black,
