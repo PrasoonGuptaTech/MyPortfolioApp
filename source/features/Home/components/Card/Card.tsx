@@ -5,37 +5,41 @@ import { PortfolioColors } from '../../../../constants/colors';
 function Card(props: any) {
   const { projectItem } = props;
   return (
-    <View style={styles.cardContainer}>
-      <View>
-        <Image
-          source={projectItem?.projectImage}
-          alt={projectItem?.projectName}
-          style={styles.cardImageView}
-        />
-      </View>
-      <View style={styles.cardContentView}>
-        <Text style={styles.cardTitleView}>{projectItem?.projectName}</Text>
-        <Text style={styles.cardTimingView}>{projectItem?.projectTiming}</Text>
-        <View style={styles.tagOuterView}>
-          {projectItem?.projectTags?.map((tag: any) => (
-            <View key={tag} style={styles.tagView}>
-              <Text>{tag}</Text>
+    <>
+      {projectItem?.isActivilyWorking ? null : (
+        <View style={styles.cardContainer}>
+          <View>
+            <Image
+              source={projectItem?.projectImage}
+              alt={projectItem?.projectName}
+              style={styles.cardImageView}
+            />
+          </View>
+          <View style={styles.cardContentView}>
+            <Text style={styles.cardTitleView}>{projectItem?.projectName}</Text>
+            <Text style={styles.cardTimingView}>{projectItem?.projectTiming}</Text>
+            <View style={styles.tagOuterView}>
+              {projectItem?.projectTags?.map((tag: any) => (
+                <View key={tag} style={styles.tagView}>
+                  <Text style={styles.tagText}>{tag}</Text>
+                </View>
+              ))}
             </View>
-          ))}
+            <Text style={styles.cardDescView}>{projectItem?.projectShortDescription}</Text>
+            <View style={styles.ctaView}>
+              <Text style={styles.ctaText}>View Project</Text>
+            </View>
+          </View>
         </View>
-        <Text style={styles.cardDescView}>{projectItem?.projectShortDescription}</Text>
-        <View style={styles.ctaView}>
-          <Text style={styles.ctaText}>View Project</Text>
-        </View>
-      </View>
-    </View>
+      )}
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   cardContainer: {
     width: 350,
-    height: 504,
+    height: 488,
     borderWidth: 1,
     borderColor: PortfolioColors.black,
     borderRadius: 20,
@@ -74,8 +78,6 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   tagView: {
-    width: 120,
-    height: 24,
     borderWidth: 1,
     borderColor: PortfolioColors.black,
     borderRadius: 32,
@@ -84,6 +86,15 @@ const styles = StyleSheet.create({
     backgroundColor: PortfolioColors.seaShellWhite,
     marginRight: 4,
     marginTop: 4,
+  },
+  tagText: {
+    padding: 4,
+    fontWeight: 'regular',
+    fontSize: 12,
+    letterSpacing: 0,
+    color: PortfolioColors.grey900,
+    fontStyle: 'normal',
+    textAlign: 'center',
   },
   cardDescView: {
     fontWeight: 'regular',

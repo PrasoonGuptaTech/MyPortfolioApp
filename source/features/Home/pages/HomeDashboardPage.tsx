@@ -4,6 +4,7 @@ import HomeHeader from '../components/header/HomeHeader';
 import HomeObjective from '../components/objective/HomeObjective';
 import HomeProjects from '../components/projects/HomeProjects';
 import { ScrollView, Text } from 'react-native';
+import HomeActiveProject from '../components/activeProject/HomeActiveProject';
 
 function HomeDashboard() {
   return (
@@ -12,6 +13,7 @@ function HomeDashboard() {
       <ScrollView>
         <HomeObjective />
         <HomeProjects />
+        <HomeActiveProject />
         <Text>ABC</Text>
         <Text>ABC</Text>
         <Text>ABC</Text>
