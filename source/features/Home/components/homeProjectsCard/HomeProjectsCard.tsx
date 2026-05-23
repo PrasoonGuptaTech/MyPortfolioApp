@@ -14,6 +14,7 @@ function HomeProjectsCard() {
         keyExtractor={(item: any) => item?.id}
         renderItem={projectCardRenderItem}
         horizontal={true}
+        showsHorizontalScrollIndicator={false}
       />
     </View>
   );
