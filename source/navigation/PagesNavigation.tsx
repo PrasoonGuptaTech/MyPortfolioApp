@@ -18,11 +18,13 @@ import {
   ProjectsTabIcon,
   TechnicalSkillsTabIcon,
 } from './Utility/TabIconUtility';
+import ProfilePage from '../features/Profile/pages/ProfilePage';
 
 export type RootStackParamList = {
   Splash: undefined;
   Onboarding: undefined;
   Home: undefined;
+  Profile: undefined;
 };
 
 export type RootTabParamList = {
@@ -93,6 +95,7 @@ function PagesNavigation() {
         component={PagesTabNavigation}
         options={{ headerShown: false }}
       />
+      <PagesStack.Screen name="Profile" component={ProfilePage} options={{ headerShown: false }} />
     </PagesStack.Navigator>
   );
 }
