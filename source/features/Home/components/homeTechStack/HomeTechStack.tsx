@@ -1,10 +1,10 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { PortfolioColors } from '../../../../constants/colors';
-import { UniqueProjects } from '../../Utility/Utility';
+import { UniqueSkills } from '../../Utility/Utility';
 
 function HomeTechStack() {
-  let projects = UniqueProjects();
+  let projects = UniqueSkills();
   return (
     <View style={styles.techStackView}>
       <View style={styles.techStackHeaderView}>

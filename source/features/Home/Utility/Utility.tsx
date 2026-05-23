@@ -1,17 +1,17 @@
 import { PortfolioProjects } from '../../../constants/projects';
 
-function ProjectStackMapping() {
-  let AllProjects: any = [];
+function AllProjectSkills() {
+  let allProjects: any = [];
   PortfolioProjects.forEach(techStack =>
-    techStack?.projectTechStack?.forEach(skills => AllProjects.push(skills)),
+    techStack?.projectTechStack?.forEach(skills => allProjects.push(skills)),
   );
-  if (AllProjects?.length > 0) {
-    return AllProjects;
+  if (allProjects?.length > 0) {
+    return allProjects;
   }
 }
 
-export function UniqueProjects() {
-  const totalProjects = ProjectStackMapping();
+export function UniqueSkills() {
+  const totalProjects = AllProjectSkills();
   let uniqueProjects: any = [];
   uniqueProjects = [...new Set(totalProjects)];
   return uniqueProjects;
