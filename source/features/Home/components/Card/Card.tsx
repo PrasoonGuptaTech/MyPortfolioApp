@@ -5,34 +5,30 @@ import { PortfolioColors } from '../../../../constants/colors';
 function Card(props: any) {
   const { projectItem } = props;
   return (
-    <>
-      {projectItem?.isActivilyWorking ? null : (
-        <View style={styles.cardContainer}>
-          <View>
-            <Image
-              source={projectItem?.projectImage}
-              alt={projectItem?.projectName}
-              style={styles.cardImageView}
-            />
-          </View>
-          <View style={styles.cardContentView}>
-            <Text style={styles.cardTitleView}>{projectItem?.projectName}</Text>
-            <Text style={styles.cardTimingView}>{projectItem?.projectTiming}</Text>
-            <View style={styles.tagOuterView}>
-              {projectItem?.projectTags?.map((tag: any) => (
-                <View key={tag} style={styles.tagView}>
-                  <Text style={styles.tagText}>{tag}</Text>
-                </View>
-              ))}
+    <View style={styles.cardContainer}>
+      <View>
+        <Image
+          source={projectItem?.projectImage}
+          alt={projectItem?.projectName}
+          style={styles.cardImageView}
+        />
+      </View>
+      <View style={styles.cardContentView}>
+        <Text style={styles.cardTitleView}>{projectItem?.projectName}</Text>
+        <Text style={styles.cardTimingView}>{projectItem?.projectTiming}</Text>
+        <View style={styles.tagOuterView}>
+          {projectItem?.projectTags?.map((tag: any) => (
+            <View key={tag} style={styles.tagView}>
+              <Text style={styles.tagText}>{tag}</Text>
             </View>
-            <Text style={styles.cardDescView}>{projectItem?.projectShortDescription}</Text>
-            <View style={styles.ctaView}>
-              <Text style={styles.ctaText}>View Project</Text>
-            </View>
-          </View>
+          ))}
         </View>
-      )}
-    </>
+        <Text style={styles.cardDescView}>{projectItem?.projectShortDescription}</Text>
+        <View style={styles.ctaView}>
+          <Text style={styles.ctaText}>View Project</Text>
+        </View>
+      </View>
+    </View>
   );
 }
 
