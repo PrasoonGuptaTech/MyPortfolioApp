@@ -1,33 +1,34 @@
 import React from 'react';
 import { Dimensions, ImageBackground, StyleSheet } from 'react-native';
 import FloatingBubbles from './FloatingBubbles';
-import { PortfolioFloatingTechStack } from '../../../constants/floatingTechStack';
+import { AllUniqueSkills } from '../Utility/Utility';
 
 const { height } = Dimensions.get('window');
 
 function OnboardingTechStack() {
+  const allSkills = AllUniqueSkills();
   return (
     <ImageBackground
       source={require('../../../assets/Images/OnboardingBackground.png')}
       style={styles.onboardingBackgroundImage}
     >
-      {PortfolioFloatingTechStack?.map(item => (
+      {allSkills?.map((item: any) => (
         <FloatingBubbles
-          key={item?.id}
-          floatingBubbleTitle={item?.title}
-          floatingBubbleImage={item?.titleLogo}
+          key={item?.projectId}
+          floatingBubbleTitle={item?.projectTitle}
+          floatingBubbleImage={item?.projectTitleLogo}
           floatingBubbleStyle={{
-            top: item?.titleTopView,
-            left: item?.titleLeftView,
-            width: item?.titleWidth,
-            backgroundColor: item?.titleBackgroundColor,
+            top: item?.projectTitleTopView,
+            left: item?.projectTitleLeftView,
+            width: item?.projectTitleWidth,
+            backgroundColor: item?.projectTitleBackgroundColor,
           }}
           floatingImageStyle={{
-            width: item?.iconWidth,
-            height: item?.iconHeight,
+            width: item?.projectIconWidth,
+            height: item?.projectIconHeight,
           }}
           floatingTextStyle={{
-            color: item?.techNameColor,
+            color: item?.projectTechNameColor,
           }}
         />
       ))}

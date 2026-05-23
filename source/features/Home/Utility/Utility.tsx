@@ -13,6 +13,16 @@ function AllProjectSkills() {
 export function UniqueSkills() {
   const totalProjects = AllProjectSkills();
   let uniqueProjects: any = [];
-  uniqueProjects = [...new Set(totalProjects)];
+  uniqueProjects = [
+    ...new Map(
+      totalProjects?.map((skill: any) => [
+        skill?.projectTitle,
+        {
+          ...skill,
+          projectTechSkillID: `${skill?.projectTitle}-${Math.random().toString(36).substring(2, 9)}`,
+        },
+      ]),
+    ).values(),
+  ];
   return uniqueProjects;
 }

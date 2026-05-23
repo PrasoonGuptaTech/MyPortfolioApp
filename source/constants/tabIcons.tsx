@@ -1,5 +1,5 @@
 export const PortfolioTabIcons = {
-  Home: {
+  HomeTab: {
     active: require('../assets/Images/HomeActiveIcon.png'),
     inActive: require('../assets/Images/HomeInActiveIcon.png'),
     iconWidth: 16,

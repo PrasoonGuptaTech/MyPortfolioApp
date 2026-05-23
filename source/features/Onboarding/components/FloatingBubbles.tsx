@@ -45,7 +45,6 @@ function FloatingBubbles(props: any) {
 const styles = () =>
   StyleSheet.create({
     floatingBubblesView: {
-      height: 31,
       borderWidth: 1,
       borderColor: PortfolioColors.black,
       borderRadius: 16,
@@ -53,6 +52,7 @@ const styles = () =>
       justifyContent: 'space-around',
       flexDirection: 'row',
       paddingHorizontal: 8,
+      paddingVertical: 6,
     },
     techStackName: {
       fontWeight: '600',

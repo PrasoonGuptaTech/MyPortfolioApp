@@ -22,7 +22,7 @@ function EnvironmentProgress() {
     }
     const progressTimeOut = setInterval(() => {
       setProgressTime(prev => prev + 10);
-    }, 1000);
+    }, 100);
     return () => clearInterval(progressTimeOut);
   }, [progressTime, navigation]);
   return (

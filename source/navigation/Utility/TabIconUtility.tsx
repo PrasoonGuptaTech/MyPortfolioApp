@@ -1,7 +1,7 @@
 import TabBarIcons from '../components/TabBarIcons';
 
 export const HomeTabIcon = ({ focused }: { focused: any }) => {
-  return <TabBarIcons focused={focused} route="Home" />;
+  return <TabBarIcons focused={focused} route="HomeTab" />;
 };
 
 export const ProjectsTabIcon = ({ focused }: { focused: any }) => {

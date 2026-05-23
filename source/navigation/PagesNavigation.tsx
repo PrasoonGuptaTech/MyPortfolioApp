@@ -26,7 +26,7 @@ export type RootStackParamList = {
 };
 
 export type RootTabParamList = {
-  Home: undefined;
+  HomeTab: undefined;
   Projects: undefined;
   EducationCerts: undefined;
   TechnicalSkills: undefined;
@@ -48,7 +48,7 @@ function PagesTabNavigation() {
       })}
     >
       <PagesTab.Screen
-        name="Home"
+        name="HomeTab"
         component={HomeDashboard}
         options={{
           headerShown: false,

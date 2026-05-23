@@ -15,4 +15,5 @@ export const PortfolioColors = {
   darkOliveGreen: '#3D4D00',
   smoothWhite: '#EFEEEA',
   classicChalk: '#F4F4F0',
+  oxfordWhite: '#E9E8E4',
 };

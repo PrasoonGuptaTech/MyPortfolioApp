@@ -17,8 +17,8 @@ function HomeTechStack() {
       </View>
       <View style={styles.techSkillsView}>
         {projects?.map((item: any) => (
-          <View key={item} style={styles.techSkillCardView}>
-            <Text style={styles.techSkillText}>{item}</Text>
+          <View key={item?.projectTechSkillID} style={styles.techSkillCardView}>
+            <Text style={styles.techSkillText}>{item?.projectTitle}</Text>
           </View>
         ))}
       </View>
