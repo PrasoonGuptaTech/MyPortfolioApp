@@ -111,17 +111,6 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     textAlign: 'center',
   },
-  techStackView: {
-    width: 350,
-    height: 226,
-    borderWidth: 1,
-    borderColor: PortfolioColors.black,
-    borderRadius: 24,
-    backgroundColor: PortfolioColors.smoothWhite,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 24,
-  },
 });
 
 export default HomeActiveProject;
