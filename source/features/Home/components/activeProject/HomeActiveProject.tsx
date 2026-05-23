@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   activeProjectContainer: {
     alignSelf: 'center',
     width: 350,
-    height: 275,
+    minHeight: 275,
     borderWidth: 1,
     borderColor: PortfolioColors.black,
     borderRadius: 24,

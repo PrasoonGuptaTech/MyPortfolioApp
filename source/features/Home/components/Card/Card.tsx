@@ -39,7 +39,7 @@ function Card(props: any) {
 const styles = StyleSheet.create({
   cardContainer: {
     width: 350,
-    height: 488,
+    minHeight: 488,
     borderWidth: 1,
     borderColor: PortfolioColors.black,
     borderRadius: 20,
