@@ -1,8 +1,13 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import ProfileHeader from '../components/profileHeader/ProfileHeader';
 
 function ProfilePage() {
-  return <Text>Profile Page</Text>;
+  return (
+    <SafeAreaView>
+      <ProfileHeader />
+    </SafeAreaView>
+  );
 }
 
 export default ProfilePage;
