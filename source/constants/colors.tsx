@@ -12,4 +12,6 @@ export const PortfolioColors = {
   darkOlive: '#171E00',
   deepOrange: '#FB5F18',
   nightRider: '#191918',
+  darkOliveGreen: '#3D4D00',
+  smoothWhite: '#EFEEEA',
 };

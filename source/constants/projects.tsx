@@ -7,6 +7,7 @@ export const PortfolioProjects = [
     projectTags: ['Mobile App', 'Retail Tech', 'Neighbor Club'],
     projectShortDescription:
       'Developed a scalable React Native mobile application for Tractor Supply Company delivering seamless retail shopping experiences, AI-powered recommendations, real-time inventory access, secure checkout flows, and omnichannel customer engagement across iOS and Android platforms.',
+    projectTechStack: ['React Native', 'Typescript', 'Redux JS', 'Unit Testing'],
     isActivilyWorking: false,
   },
   {
@@ -17,16 +18,18 @@ export const PortfolioProjects = [
     projectTags: ['Mobile App', 'Task Managment'],
     projectShortDescription:
       'Developed a cross-platform task management mobile application using React Native focused on team collaboration, real-time task tracking, and workflow management with a scalable and user-friendly architecture.',
+    projectTechStack: ['React Native', 'Typescript', 'Redux Toolkit'],
     isActivilyWorking: false,
   },
   {
     id: 3,
     projectImage: '',
-    projectName: 'My Portfolio App',
+    projectName: 'Prasoon Portfolio App',
     projectTiming: 'May 2026',
     projectTags: ['Cross Platform', 'Performance Optimization'],
     projectShortDescription:
       'A curated collection of my software projects, technical expertise, and development achievements.',
+    projectTechStack: ['React Native', 'Typescript', 'Redux Toolkit', 'CI/CD Pipeline'],
     isActivilyWorking: true,
   },
 ];
