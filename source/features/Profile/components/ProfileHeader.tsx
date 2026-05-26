@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dimensions, Image, Pressable, StyleSheet, Text, View } from 'react-native';
-import { PortfolioColors } from '../../../../constants/colors';
 import { useNavigation } from '@react-navigation/native';
+import { PortfolioColors } from '../../../constants/colors';
 
 const { width } = Dimensions.get('window');
 
@@ -14,7 +14,7 @@ function ProfileHeader() {
     <View style={styles.profileHeaderView}>
       <Pressable style={styles.backArrowIconView} onPress={onBackPressHandler}>
         <Image
-          source={require('../../../../assets/Images/RightArrowIcon.png')}
+          source={require('../../../assets/Images/RightArrowIcon.png')}
           style={styles.arrowIconStyle}
         />
       </Pressable>
@@ -42,12 +42,13 @@ const styles = StyleSheet.create({
   },
   headerTitleStyle: {
     fontWeight: 'bold',
-    fontSize: 30,
+    fontSize: 24,
     letterSpacing: 0,
     color: PortfolioColors.black,
     fontStyle: 'normal',
     textAlign: 'center',
     marginHorizontal: 16,
+    marginVertical: 4,
   },
 });
 
