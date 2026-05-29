@@ -5,6 +5,7 @@ import ProfileHero from '../components/ProfileHero';
 import { ScrollView, StyleSheet } from 'react-native';
 import ProfileJourney from '../components/ProfileJourney';
 import ProfilePhilosophy from '../components/ProfilePhilosophy';
+import ProfileWorkflow from '../components/ProfileWorkflow';
 
 function ProfilePage() {
   return (
@@ -14,6 +15,7 @@ function ProfilePage() {
         <ProfileHero />
         <ProfileJourney />
         <ProfilePhilosophy />
+        <ProfileWorkflow />
       </ScrollView>
     </SafeAreaView>
   );

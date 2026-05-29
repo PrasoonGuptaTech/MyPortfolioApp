@@ -42,9 +42,9 @@ function ProfilePhilosophy() {
 
 const styles = StyleSheet.create({
   profilePhilosophyContainer: {
-    marginHorizontal: 36,
-    marginVertical: 8,
+    alignSelf: 'center',
     justifyContent: 'center',
+    marginVertical: 16,
   },
   philosophyText: {
     fontWeight: 'bold',
@@ -53,11 +53,13 @@ const styles = StyleSheet.create({
     color: PortfolioColors.grey900,
     fontStyle: 'normal',
     textAlign: 'left',
+    marginLeft: 16,
   },
   philosophyCardView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginVertical: 16,
+    marginHorizontal: 8,
   },
   philosophyCardLayoutView: {
     width: 169,
@@ -68,11 +70,13 @@ const styles = StyleSheet.create({
     borderColor: PortfolioColors.black,
     backgroundColor: PortfolioColors.oxfordWhite,
     marginRight: 8,
+    marginHorizontal: 8
   },
   newPhilosophyLayoutView: {
     width: 350,
     height: 114,
     backgroundColor: PortfolioColors.buttercupYellow,
+    marginHorizontal: 16,
   },
   philosophyIconStyle: {
     width: 19.65,
