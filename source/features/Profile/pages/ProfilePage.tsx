@@ -6,6 +6,7 @@ import { ScrollView, StyleSheet } from 'react-native';
 import ProfileJourney from '../components/ProfileJourney';
 import ProfilePhilosophy from '../components/ProfilePhilosophy';
 import ProfileWorkflow from '../components/ProfileWorkflow';
+import ProfileQuote from '../components/ProfileQuote';
 
 function ProfilePage() {
   return (
@@ -16,6 +17,7 @@ function ProfilePage() {
         <ProfileJourney />
         <ProfilePhilosophy />
         <ProfileWorkflow />
+        <ProfileQuote />
       </ScrollView>
     </SafeAreaView>
   );
