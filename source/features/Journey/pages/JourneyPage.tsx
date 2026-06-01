@@ -9,7 +9,7 @@ function JourneyPage() {
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
       <JourneyHeader />
-      <ScrollView>
+      <ScrollView nestedScrollEnabled={true}>
         <JourneyTitle />
         <JourneyTimeline />
       </ScrollView>
