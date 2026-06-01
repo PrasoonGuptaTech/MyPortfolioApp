@@ -1,18 +1,27 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { PortfolioColors } from '../../../constants/colors';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../../navigation/PagesNavigation';
+
+type ProfileNaviagtionProps = StackNavigationProp<RootStackParamList, 'Journey'>;
 
 function ProfileJourney() {
+  const navigation = useNavigation<ProfileNaviagtionProps>();
+  const onJourneyNavigationHandler = () => navigation.navigate('Journey');
   return (
     <View style={styles.journeyContainer}>
       <View style={styles.journeyView}>
         <View style={styles.journeyTitleArrow}>
           <Text style={styles.journeyTitleText}>Profile Journey</Text>
-          <Image
-            source={require('../../../assets/Images/RightWhiteArrowIcon.png')}
-            style={styles.rightArrowIConView}
-            alt="Right Arrow Icon"
-          />
+          <Pressable onPress={onJourneyNavigationHandler}>
+            <Image
+              source={require('../../../assets/Images/RightWhiteArrowIcon.png')}
+              style={styles.rightArrowIConView}
+              alt="Right Arrow Icon"
+            />
+          </Pressable>
         </View>
         <Text style={styles.journeyDescription}>
           Starting as a mobile developer passionate about clean user experiences, I’ve spent years
