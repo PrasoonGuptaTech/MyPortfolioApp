@@ -3,6 +3,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import JourneyHeader from '../components/JourneyHeader';
 import { ScrollView, StyleSheet } from 'react-native';
 import JourneyTitle from '../components/JourneyTitle';
+import JourneyTimeline from '../components/JourneyTimeline';
 
 function JourneyPage() {
   return (
@@ -10,6 +11,7 @@ function JourneyPage() {
       <JourneyHeader />
       <ScrollView>
         <JourneyTitle />
+        <JourneyTimeline />
       </ScrollView>
     </SafeAreaView>
   );

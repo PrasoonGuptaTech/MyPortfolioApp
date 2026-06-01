@@ -16,5 +16,6 @@ export const PortfolioColors = {
   smoothWhite: '#EFEEEA',
   classicChalk: '#F4F4F0',
   oxfordWhite: '#E9E8E4',
-  purpleBlack: '#1B192F'
+  purpleBlack: '#1B192F',
+  sinopiaOrange: '#DD4B08'
 };

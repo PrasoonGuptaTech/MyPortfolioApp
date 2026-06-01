@@ -5,7 +5,7 @@ export const PortfolioExperience = [
     companyLogo: require('../assets/Images/ScansAICompanyLogo.png'),
     jobTitle: 'React Native Developer',
     jobImage: '',
-    isCuurentCompany: true,
+    isCurrentCompany: true,
     jobStartingDate: 'Apr 2026',
     jobEndingDate: '',
     jobDescription:
@@ -15,10 +15,10 @@ export const PortfolioExperience = [
   {
     id: 2,
     companyName: 'Infosys Ltd.',
-    companyLogo: '',
+    companyLogo: require('../assets/Images/InfosysCompanyLogo.png'),
     jobTitle: 'Technology Lead',
     jobImage: '',
-    isCuurentCompany: false,
+    isCurrentCompany: false,
     jobStartingDate: 'July 2021',
     jobEndingDate: 'Mar 2026',
     jobDescription:
@@ -31,7 +31,7 @@ export const PortfolioExperience = [
     companyLogo: require('../assets/Images/WizliteCompanyLogo.png'),
     jobTitle: 'React Native Developer',
     jobImage: '',
-    isCuurentCompany: false,
+    isCurrentCompany: false,
     jobStartingDate: 'Jan 2021',
     jobEndingDate: 'Mar 2021',
     jobDescription:
@@ -44,7 +44,7 @@ export const PortfolioExperience = [
     companyLogo: require('../assets/Images/RamaKrishnaCompanyLogo.png'),
     jobTitle: 'Field Application Engineer',
     jobImage: '',
-    isCuurentCompany: false,
+    isCurrentCompany: false,
     jobStartingDate: 'Nov 2019',
     jobEndingDate: 'Nov 2020',
     jobDescription:
