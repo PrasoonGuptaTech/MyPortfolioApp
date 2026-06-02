@@ -21,14 +21,27 @@ function EducationEnjoy() {
     return <Image source={item?.enjoyImage} style={styles.enjoyImageView} />;
   };
   return (
-    <View style={styles.enjoymentContainer}>
-      <FlatList
-        data={PortfolioEducationEnjoy}
-        keyExtractor={(item: any) => item?.id}
-        renderItem={enjoymentRenderItem}
-        horizontal={true}
-        ref={enjoymentRef}
-      />
+    <View>
+      <View style={styles.enjoymentContainer}>
+        <FlatList
+          data={PortfolioEducationEnjoy}
+          keyExtractor={(item: any) => item?.id}
+          renderItem={enjoymentRenderItem}
+          horizontal={true}
+          ref={enjoymentRef}
+          showsHorizontalScrollIndicator={false}
+        />
+      </View>
+      <View style={styles.paginationLayout}>
+        {PortfolioEducationEnjoy.map((item: any, index: any) => {
+          return (
+            <View
+              style={[styles.paginationDot, currentIndex === index && styles.paginationActiveDot]}
+              key={item?.id}
+            />
+          );
+        })}
+      </View>
     </View>
   );
 }
@@ -49,6 +62,25 @@ const styles = StyleSheet.create({
     width: 348,
     height: 190,
     borderRadius: 24,
+  },
+  paginationLayout: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  paginationDot: {
+    width: 5,
+    height: 5,
+    borderWidth: 1,
+    borderColor: PortfolioColors.lightPeach,
+    backgroundColor: PortfolioColors.lightPeach,
+    borderRadius: 2.5,
+    marginHorizontal: 4,
+  },
+  paginationActiveDot: {
+    width: 30,
+    backgroundColor: PortfolioColors.brightOrange,
+    borderColor: PortfolioColors.brightOrange,
   },
 });
 
