@@ -3,6 +3,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import EducationHeader from '../components/EducationHeader';
 import { ScrollView } from 'react-native';
 import EducationEnjoy from '../components/EducationEnjoy';
+import EducationCollege from '../components/EducationCollege';
 
 function EducationCertsPage() {
   return (
@@ -10,6 +11,7 @@ function EducationCertsPage() {
       <EducationHeader />
       <ScrollView>
         <EducationEnjoy />
+        <EducationCollege />
       </ScrollView>
     </SafeAreaView>
   );
