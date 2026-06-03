@@ -5,6 +5,7 @@ import { ScrollView } from 'react-native';
 import EducationEnjoy from '../components/EducationEnjoy';
 import EducationCollege from '../components/EducationCollege';
 import EducationFocus from '../components/EducationFocus';
+import EducationCertifications from '../components/EducationCertifications';
 
 function EducationCertsPage() {
   return (
@@ -14,6 +15,7 @@ function EducationCertsPage() {
         <EducationEnjoy />
         <EducationCollege />
         <EducationFocus />
+        <EducationCertifications />
       </ScrollView>
     </SafeAreaView>
   );
