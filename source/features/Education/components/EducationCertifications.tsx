@@ -1,13 +1,16 @@
-import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { PortfolioColors } from '../../../constants/colors';
+import EducationCertificateModal from './EducationCertificateModal';
 
 function EducationCertifications() {
+  const [isCertificateModalOpen, setIsCertificateModalOpen] = useState(false);
+  const onCertificatePresshandler = () => setIsCertificateModalOpen(true);
   return (
     <View style={styles.certificationContainer}>
       <Text style={styles.certificationsTitle}>Certifications</Text>
       <View style={styles.certificationLayout}>
-        <View style={styles.certificationLayoutUI}>
+        <Pressable style={styles.certificationLayoutUI} onPress={onCertificatePresshandler}>
           <View style={styles.certificateLogoLayout}>
             <Image
               source={require('../../../assets/Images/ReactNativeTechStack.png')}
@@ -23,8 +26,14 @@ function EducationCertifications() {
               <Text style={styles.certificateCompanyText}>2022</Text>
             </View>
           </View>
-        </View>
+        </Pressable>
       </View>
+      {isCertificateModalOpen && (
+        <EducationCertificateModal
+          isCertificateModalOpen={isCertificateModalOpen}
+          setIsCertificateModalOpen={setIsCertificateModalOpen}
+        />
+      )}
     </View>
   );
 }
@@ -45,7 +54,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
   },
   certificationLayout: {
-    padding: 16,
+    padding: 12,
     marginTop: 8,
     borderWidth: 1,
     borderColor: PortfolioColors.black,
