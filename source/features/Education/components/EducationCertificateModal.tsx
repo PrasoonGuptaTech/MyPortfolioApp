@@ -1,12 +1,44 @@
+import { CameraRoll } from '@react-native-camera-roll/camera-roll';
 import React from 'react';
-import { Image, Modal, Pressable, StyleSheet, View } from 'react-native';
+import { Alert, Image, Modal, Pressable, StyleSheet, View } from 'react-native';
+import RNFSTurbo from 'react-native-fs-turbo';
 
 function EducationCertificateModal(props: any) {
   const { isCertificateModalOpen, setIsCertificateModalOpen } = props;
   const onBackHandler = () => setIsCertificateModalOpen(false);
+  const onDownloadHandler = async () => {
+    try {
+      const imageAsset = Image.resolveAssetSource(
+        require('../../../assets/Images/ReactNativeCertificate.png'),
+      );
+      const path = `${RNFSTurbo.DocumentDirectoryPath}/ReactNativeCertificate.png`;
+      const response = await RNFSTurbo.downloadFile({
+        fromUrl: imageAsset.uri,
+        toFile: path,
+      }).promise;
+      if (response?.statusCode === 200) {
+        await CameraRoll.saveAsset(path, {
+          type: 'photo',
+        });
+        Alert.alert('Success', 'Image saved to Gallery', [
+          {
+            text: 'OK',
+            onPress: () => setIsCertificateModalOpen(false),
+          },
+        ]);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <View style={styles.modalContainer}>
-      <Modal transparent={true} visible={isCertificateModalOpen} statusBarTranslucent={true}>
+      <Modal
+        transparent={true}
+        visible={isCertificateModalOpen}
+        statusBarTranslucent={true}
+        animationType="slide"
+      >
         <View style={styles.modalOverlayContainer}>
           <View style={styles.backDownloadContainer}>
             <View style={styles.backDownloadLayout}>
@@ -17,7 +49,7 @@ function EducationCertificateModal(props: any) {
                   style={styles.backArrowIconStyle}
                 />
               </Pressable>
-              <Pressable>
+              <Pressable onPress={onDownloadHandler}>
                 <Image
                   source={require('../../../assets/Images/DownloadIcon.png')}
                   alt="Download Icon"
