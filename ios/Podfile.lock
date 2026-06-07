@@ -2085,28 +2085,6 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - RNShare (12.3.1):
-    - hermes-engine
-    - RCTRequired
-    - RCTTypeSafety
-    - React-Core
-    - React-Core-prebuilt
-    - React-debug
-    - React-Fabric
-    - React-featureflags
-    - React-graphics
-    - React-ImageManager
-    - React-jsi
-    - React-NativeModulesApple
-    - React-RCTFabric
-    - React-renderercss
-    - React-rendererdebug
-    - React-utils
-    - ReactCodegen
-    - ReactCommon/turbomodule/bridging
-    - ReactCommon/turbomodule/core
-    - ReactNativeDependencies
-    - Yoga
   - RNWorklets (0.8.3):
     - hermes-engine
     - RCTRequired
@@ -2262,7 +2240,6 @@ DEPENDENCIES:
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
-  - RNShare (from `../node_modules/react-native-share`)
   - RNWorklets (from `../node_modules/react-native-worklets`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -2428,8 +2405,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
-  RNShare:
-    :path: "../node_modules/react-native-share"
   RNWorklets:
     :path: "../node_modules/react-native-worklets"
   Yoga:
@@ -2516,7 +2491,6 @@ SPEC CHECKSUMS:
   RNGestureHandler: 4a5a8962f7fbfbe6105bd9d1d30c4f24167fe109
   RNReanimated: 09db311f56ce38c9515f74fbc6c33946910fc7dd
   RNScreens: 088d923c4327c63c9f8c942cae17a9d038f47d97
-  RNShare: 72080fa52230e03f1cc9e4f42462ab26df831c91
   RNWorklets: d940c79493badd3ab8fdeadba1d65b1cb20d4211
   Yoga: c0b3f2c7e8d3e327e450223a2414ca3fa296b9a2
 
