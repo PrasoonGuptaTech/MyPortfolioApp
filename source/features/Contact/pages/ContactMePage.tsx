@@ -4,6 +4,7 @@ import ContactHeader from '../components/ContactHeader';
 import { ScrollView } from 'react-native';
 import ContactHiringTitle from '../components/ContactHiringTitle';
 import ContactTitle from '../components/ContactTitle';
+import ContactCVEmail from '../components/ContactCVEmail';
 
 function ContactMePage() {
   return (
@@ -12,6 +13,7 @@ function ContactMePage() {
       <ScrollView>
         <ContactHiringTitle />
         <ContactTitle />
+        <ContactCVEmail />
       </ScrollView>
     </SafeAreaView>
   );

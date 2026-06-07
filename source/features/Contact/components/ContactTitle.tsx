@@ -10,7 +10,7 @@ function ContactTitle() {
           Let's build something...
         </Text>
         <Text style={styles.descText} numberOfLines={2}>
-          Interested in a project or just want to say hello? Drop a message below.
+          Interested in a project or just want to say hello? Drop an email below.
         </Text>
       </View>
     </View>
@@ -19,7 +19,7 @@ function ContactTitle() {
 
 const styles = StyleSheet.create({
   ContactTitleContainer: {
-    marginTop: 8,
+    marginTop: 16,
     justifyContent: 'flex-start',
   },
   contactTitleUI: {
