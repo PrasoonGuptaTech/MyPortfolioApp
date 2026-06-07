@@ -1,8 +1,18 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import SkillsHeader from '../components/SkillsHeader';
+import { ScrollView } from 'react-native';
+import SkillsHero from '../components/SkillsHero';
 
 function TechnicalSkillsPage() {
-  return <Text>Technical Skills</Text>;
+  return (
+    <SafeAreaView>
+      <SkillsHeader />
+      <ScrollView>
+        <SkillsHero />
+      </ScrollView>
+    </SafeAreaView>
+  );
 }
 
 export default TechnicalSkillsPage;
