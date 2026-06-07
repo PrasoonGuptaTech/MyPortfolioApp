@@ -66,6 +66,7 @@ export const PortfolioProjects = [
         projectIconWidth: 15,
         projectIconHeight: 15,
         projectTechNameColor: PortfolioColors.black,
+        projectLink: 'https://github.com/PrasoonGuptaTech',
       },
       {
         projectTitle: 'Sonarqube',
@@ -77,6 +78,7 @@ export const PortfolioProjects = [
         projectIconWidth: 15,
         projectIconHeight: 15,
         projectTechNameColor: PortfolioColors.white,
+        projectLink: 'https://sonar.mrplpras.com/projects',
       },
     ],
     productionSupportTechStack: [
@@ -170,6 +172,7 @@ export const PortfolioProjects = [
         projectIconWidth: 15,
         projectIconHeight: 15,
         projectTechNameColor: PortfolioColors.black,
+        projectLink: 'https://github.com/PrasoonGuptaTech',
       },
       {
         projectTitle: 'Play Store',
@@ -181,6 +184,7 @@ export const PortfolioProjects = [
         projectIconWidth: 15,
         projectIconHeight: 15,
         projectTechNameColor: PortfolioColors.black,
+        projectLink: '',
       },
       {
         projectTitle: 'App Store',
@@ -192,6 +196,7 @@ export const PortfolioProjects = [
         projectIconWidth: 15,
         projectIconHeight: 15,
         projectTechNameColor: PortfolioColors.black,
+        projectLink: '',
       },
     ],
     productionSupportTechStack: [],
@@ -262,6 +267,7 @@ export const PortfolioProjects = [
         projectIconWidth: 15,
         projectIconHeight: 15,
         projectTechNameColor: PortfolioColors.black,
+        projectLink: 'https://github.com/PrasoonGuptaTech',
       },
       {
         projectTitle: 'Sonarqube',
@@ -273,6 +279,7 @@ export const PortfolioProjects = [
         projectIconWidth: 15,
         projectIconHeight: 15,
         projectTechNameColor: PortfolioColors.white,
+        projectLink: 'https://sonar.mrplpras.com/projects',
       },
       {
         projectTitle: 'Docker',
@@ -284,6 +291,7 @@ export const PortfolioProjects = [
         projectIconWidth: 15,
         projectIconHeight: 15,
         projectTechNameColor: PortfolioColors.black,
+        projectLink: '',
       },
     ],
     productionSupportTechStack: [],
