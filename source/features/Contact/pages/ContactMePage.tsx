@@ -1,8 +1,20 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import ContactHeader from '../components/ContactHeader';
+import { ScrollView } from 'react-native';
+import ContactHiringTitle from '../components/ContactHiringTitle';
+import ContactTitle from '../components/ContactTitle';
 
 function ContactMePage() {
-  return <Text>Contact Me</Text>;
+  return (
+    <SafeAreaView>
+      <ContactHeader />
+      <ScrollView>
+        <ContactHiringTitle />
+        <ContactTitle />
+      </ScrollView>
+    </SafeAreaView>
+  );
 }
 
 export default ContactMePage;
