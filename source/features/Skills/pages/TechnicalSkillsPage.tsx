@@ -3,6 +3,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import SkillsHeader from '../components/SkillsHeader';
 import { ScrollView } from 'react-native';
 import SkillsHero from '../components/SkillsHero';
+import SkillsFrontend from '../components/SkillsFrontend';
 
 function TechnicalSkillsPage() {
   return (
@@ -10,6 +11,7 @@ function TechnicalSkillsPage() {
       <SkillsHeader />
       <ScrollView>
         <SkillsHero />
+        <SkillsFrontend />
       </ScrollView>
     </SafeAreaView>
   );

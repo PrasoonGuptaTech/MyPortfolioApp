@@ -1,23 +1,15 @@
 import { PortfolioProjects } from '../../../constants/projects';
 
-function AllSkills() {
+function TechnicalSkills() {
   let allSkills: any = [];
   PortfolioProjects.forEach(projectItem =>
     projectItem?.projectTechStack?.map(projectSkills => allSkills.push(projectSkills)),
   );
-  PortfolioProjects.forEach(projectItem =>
-    projectItem?.otherTechStack?.map(otherSkills => allSkills.push(otherSkills)),
-  );
-  PortfolioProjects.forEach(projectItem =>
-    projectItem?.productionSupportTechStack?.map(productionSkills =>
-      allSkills.push(productionSkills),
-    ),
-  );
   return allSkills;
 }
 
-export function AllUniqueSkills() {
-  const allSkills: any = AllSkills();
+export function AllUniqueTechnicalSkills() {
+  const allSkills: any = TechnicalSkills();
   let allUniqueSkills: any = [];
   if (allSkills?.length > 0) {
     allUniqueSkills = [
