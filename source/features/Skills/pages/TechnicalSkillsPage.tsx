@@ -4,6 +4,7 @@ import SkillsHeader from '../components/SkillsHeader';
 import { ScrollView } from 'react-native';
 import SkillsHero from '../components/SkillsHero';
 import SkillsFrontend from '../components/SkillsFrontend';
+import SkillsTools from '../components/SkillsTools';
 
 function TechnicalSkillsPage() {
   return (
@@ -12,6 +13,7 @@ function TechnicalSkillsPage() {
       <ScrollView>
         <SkillsHero />
         <SkillsFrontend />
+        <SkillsTools />
       </ScrollView>
     </SafeAreaView>
   );
