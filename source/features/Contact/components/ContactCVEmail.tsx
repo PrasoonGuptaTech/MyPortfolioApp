@@ -1,21 +1,63 @@
 import React from 'react';
-import { Image, Linking, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Alert, Image, Linking, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import { PortfolioColors } from '../../../constants/colors';
+import ReactNativeBlobUtil from 'react-native-blob-util';
 
 function ContactCVEmail() {
   const onEmailPressHandler = () => Linking.openURL('mailto:ishankgupta1may@gmail.com');
+  const onCVDownloadHandler = async () => {
+    try {
+      const { dirs } = ReactNativeBlobUtil.fs;
+      if (Platform.OS === 'android') {
+        const tempCachePath = `${dirs.CacheDir}/PrasoonCV.pdf`;
+        await ReactNativeBlobUtil.fs.cp(ReactNativeBlobUtil.fs.asset('Prasoon.pdf'), tempCachePath);
+        await ReactNativeBlobUtil.MediaCollection.copyToMediaStore(
+          { name: 'PrasoonCV.pdf', parentFolder: '', mimeType: 'application/pdf' },
+          'Download',
+          tempCachePath,
+        );
+        await ReactNativeBlobUtil.fs.unlink(tempCachePath);
+        Alert.alert('Download Successfully', 'CV Downloaded Succesfully', [
+          {
+            text: 'OK',
+            onPress: () => {},
+          },
+        ]);
+      } else {
+        const localPath = `${dirs.DocumentDir}/PrasoonCV.pdf`;
+        const bundlePath = `${ReactNativeBlobUtil.fs.asset('')}/${'Prasoon.pdf'}`;
+        const fileExist = await ReactNativeBlobUtil.fs.exists(localPath);
+        if (fileExist) {
+          await ReactNativeBlobUtil.fs.unlink(localPath);
+        }
+        await ReactNativeBlobUtil.fs.cp(bundlePath, localPath);
+        ReactNativeBlobUtil.ios.previewDocument(localPath);
+        Alert.alert('Download Successfully', 'CV Downloaded Succesfully', [
+          {
+            text: 'OK',
+            onPress: () => {},
+          },
+        ]);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <View style={styles.cvEmailContainer}>
       <View style={styles.cvEmailUI}>
         <View style={styles.contentLayout}>
-          <View style={[styles.boxLayout, { backgroundColor: PortfolioColors.brightOrange }]}>
+          <Pressable
+            style={[styles.boxLayout, { backgroundColor: PortfolioColors.brightOrange }]}
+            onPress={onCVDownloadHandler}
+          >
             <Image
               source={require('../../../assets/Images/CVIcon.png')}
               alt="CV Logo"
               style={styles.cvLogo}
             />
             <Text style={styles.cvText}>RESUME</Text>
-          </View>
+          </Pressable>
           <Pressable
             style={[styles.boxLayout, { backgroundColor: PortfolioColors.paleGrey }]}
             onPress={onEmailPressHandler}
