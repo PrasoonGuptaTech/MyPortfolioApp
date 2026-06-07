@@ -1,8 +1,9 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, Linking, Pressable, StyleSheet, Text, View } from 'react-native';
 import { PortfolioColors } from '../../../constants/colors';
 
 function ContactCVEmail() {
+  const onEmailPressHandler = () => Linking.openURL('mailto:ishankgupta1may@gmail.com');
   return (
     <View style={styles.cvEmailContainer}>
       <View style={styles.cvEmailUI}>
@@ -15,14 +16,17 @@ function ContactCVEmail() {
             />
             <Text style={styles.cvText}>RESUME</Text>
           </View>
-          <View style={[styles.boxLayout, { backgroundColor: PortfolioColors.paleGrey }]}>
+          <Pressable
+            style={[styles.boxLayout, { backgroundColor: PortfolioColors.paleGrey }]}
+            onPress={onEmailPressHandler}
+          >
             <Image
               source={require('../../../assets/Images/EmailIcon.png')}
               alt="Email Logo"
               style={styles.emailLogo}
             />
             <Text style={styles.emailText}>EMAIL</Text>
-          </View>
+          </Pressable>
         </View>
       </View>
     </View>
