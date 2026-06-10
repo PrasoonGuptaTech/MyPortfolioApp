@@ -1,8 +1,17 @@
 import React from 'react';
-import { Image, Platform, StyleSheet, Text, View } from 'react-native';
+import { Image, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import { PortfolioColors } from '../../../../constants/colors';
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import { useNavigation } from '@react-navigation/native';
+import { RootTabParamList } from '../../../../navigation/PagesNavigation';
+
+type ProjectNavigationHandler = BottomTabNavigationProp<RootTabParamList, 'Projects'>;
 
 function HomeProjectsHeader() {
+  const navigation = useNavigation<ProjectNavigationHandler>();
+  const onProjectHandler = () => {
+    navigation.navigate('Projects');
+  };
   return (
     <View style={styles.headerContainer}>
       <View style={styles.projectHeaderView}>
@@ -13,9 +22,9 @@ function HomeProjectsHeader() {
         />
         <Text style={styles.headerTitle}>Latest Work</Text>
       </View>
-      <View style={styles.ctaView}>
+      <Pressable style={styles.ctaView} onPress={onProjectHandler}>
         <Text style={styles.ctaTitle}>View More</Text>
-      </View>
+      </Pressable>
     </View>
   );
 }

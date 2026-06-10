@@ -1,9 +1,18 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { PortfolioColors } from '../../../../constants/colors';
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import { RootTabParamList } from '../../../../navigation/PagesNavigation';
+import { useNavigation } from '@react-navigation/native';
+
+type CardNavigationProps = BottomTabNavigationProp<RootTabParamList, 'Projects'>;
 
 function Card(props: any) {
   const { projectItem } = props;
+  const navigation = useNavigation<CardNavigationProps>();
+  const onProjectHandler = () => {
+    navigation.navigate('Projects');
+  };
   return (
     <View style={styles.cardContainer}>
       <View>
@@ -24,9 +33,9 @@ function Card(props: any) {
           ))}
         </View>
         <Text style={styles.cardDescView}>{projectItem?.projectShortDescription}</Text>
-        <View style={styles.ctaView}>
+        <Pressable style={styles.ctaView} onPress={onProjectHandler}>
           <Text style={styles.ctaText}>View Project</Text>
-        </View>
+        </Pressable>
       </View>
     </View>
   );
