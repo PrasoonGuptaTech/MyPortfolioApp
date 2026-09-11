@@ -1,0 +1,39 @@
+name: Sonar Lite
+
+on:
+  pull_request:
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - run: npm ci
+
+      - run: npm run test-coverage
+
+      - name: Trigger scan
+        run: |
+          curl -sf -u "$SONAR_LITE_TOKEN:" -X POST "$SONAR_LITE_URL/api/projects/$SONAR_LITE_PROJECT_ID/scan" \
+            -H "Content-Type: application/json" \
+            -d "{\"branch\": \"${{ github.head_ref }}\"}"
+        env:
+          SONAR_LITE_URL: ${{ vars.SONAR_LITE_URL }}
+          SONAR_LITE_PROJECT_ID: ${{ vars.SONAR_LITE_PROJECT_ID }}
+          SONAR_LITE_TOKEN: ${{ secrets.SONAR_LITE_TOKEN }}
+
+      - name: Push coverage to Sonar Lite
+        run: |
+          curl -sf -u "$SONAR_LITE_TOKEN:" -X POST "$SONAR_LITE_URL/api/projects/$SONAR_LITE_PROJECT_ID/coverage?branch=${{ github.head_ref }}" \
+            -H "Content-Type: text/plain" \
+            --data-binary @coverage/lcov.info
+        env:
+          SONAR_LITE_URL: ${{ vars.SONAR_LITE_URL }}
+          SONAR_LITE_PROJECT_ID: ${{ vars.SONAR_LITE_PROJECT_ID }}
+          SONAR_LITE_TOKEN: ${{ secrets.SONAR_LITE_TOKEN }}
